@@ -31,13 +31,13 @@ test_psgi app => $ENV{PROXY} == 1 ? $proxy_app : $app, client => sub {
     cmp_ok $res->status_line, 'eq', '200 OK', 'expecting status 200 OK for normal url'
         or diag($res->content);
 
-    $res = $cb->(GET "/stations/", [format => 'xml']);
+    $res = $cb->(GET "/stations/?format=xml");
     ok($res->is_success, "HTTP::Response should have successful state");
     like($res->header('Content-Type'), qr@text/xml@, "Header Content-Type must be text/xml");
     cmp_ok $res->status_line, 'eq', '200 OK', 'expecting status 200 OK for normal url'
         or diag($res->content);
 
-    $res = $cb->(GET "/stations/", [format => 'json']);
+    $res = $cb->(GET "/stations/?format=json");
     ok($res->is_success, "HTTP::Response should have successful state");
     like($res->header('Content-Type'),qr@^application/json@, "Header Content-Type must be application/json");
     cmp_ok $res->status_line, 'eq', '200 OK', 'expecting status 200 OK for normal url'
