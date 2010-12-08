@@ -6,6 +6,8 @@ use WebHive::Log;
 use List::Util qw/max/;
 use JSON::XS;
 
+# ABSTRACT: PSGI interface for IRail API
+
 # station loading ###########################################################################
 
 our %searchlist;
