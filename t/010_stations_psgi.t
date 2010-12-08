@@ -5,13 +5,18 @@ use Data::Dumper;
 use HTTP::Request::Common;
 use Plack::Builder;
 use IRail::PSGI;
+use Plack::App::Proxy;
 
 
 my $app = builder {
     mount '/stations/' => builder { $IRail::PSGI::stations }
 };
 
-test_psgi app => $app, client => sub {
+my $proxy_app = builder {
+    mount "/" => Plack::App::Proxy->new(remote => "http://dev.api.irail.be/")->to_app;
+};
+
+test_psgi app => $ENV{PROXY} == 1 ? $proxy_app : $app, client => sub {
     my $cb = shift;
     my $res; # see man HTTP::Response
     
