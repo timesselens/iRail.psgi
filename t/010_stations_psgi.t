@@ -27,19 +27,19 @@ test_psgi app => $ENV{PROXY} == 1 ? $proxy_app : $app, client => sub {
     # test station url with different kind of arguments ########################################################
     $res = $cb->(GET "/stations/");
     ok($res->is_success, "HTTP::Response should have successful state");
-    is($res->header('Content-Type'),'text/xml', "Header Content-Type must be text/xml");
+    like($res->header('Content-Type'), qr@text/xml@, "Header Content-Type must be text/xml");
     cmp_ok $res->status_line, 'eq', '200 OK', 'expecting status 200 OK for normal url'
         or diag($res->content);
 
     $res = $cb->(GET "/stations/", [format => 'xml']);
     ok($res->is_success, "HTTP::Response should have successful state");
-    is($res->header('Content-Type'),'text/xml', "Header Content-Type must be text/xml");
+    like($res->header('Content-Type'), qr@text/xml@, "Header Content-Type must be text/xml");
     cmp_ok $res->status_line, 'eq', '200 OK', 'expecting status 200 OK for normal url'
         or diag($res->content);
 
     $res = $cb->(GET "/stations/", [format => 'json']);
     ok($res->is_success, "HTTP::Response should have successful state");
-    is($res->header('Content-Type'),'application/json', "Header Content-Type must be text/xml");
+    like($res->header('Content-Type'),qr@^application/json@, "Header Content-Type must be application/json");
     cmp_ok $res->status_line, 'eq', '200 OK', 'expecting status 200 OK for normal url'
         or diag($res->content);
     
