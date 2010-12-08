@@ -7,15 +7,13 @@ use Plack::Builder;
 use IRail::PSGI;
 use Plack::App::Proxy;
 
+# this is a small psgi application with only one bound url
+my $app = builder { mount '/stations/' => builder { $IRail::PSGI::stations } };
 
-my $app = builder {
-    mount '/stations/' => builder { $IRail::PSGI::stations }
-};
+# this is a psgi proxy application pointing to dev.api.irail.be for all urls
+my $proxy_app = builder { mount "/" => Plack::App::Proxy->new(remote => "http://dev.api.irail.be/")->to_app; };
 
-my $proxy_app = builder {
-    mount "/" => Plack::App::Proxy->new(remote => "http://dev.api.irail.be/")->to_app;
-};
-
+# this is the main test loop which will setup a psgi application and test it
 test_psgi app => $ENV{PROXY} == 1 ? $proxy_app : $app, client => sub {
     my $cb = shift;
     my $res; # see man HTTP::Response
