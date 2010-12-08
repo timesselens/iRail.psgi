@@ -54,11 +54,28 @@ our $stations = sub {
     
         return [ 200, [ 'Content-Type' => 'text/xml' ], [ $xml ] ];
 
-    } elsif ($format =~ m/json/i) {
+    } elsif ($format =~ m/json$/i) {
 
-        $json ||= encode_json { station => [ map { { id => $_->{id}, name => $_->{name}, locationX => $_->{long}, locationY => $_->{lat}  } } sort { $a->{name} cmp $b->{name} } values %stationlist ] };
+        $json ||= encode_json { station => [ map { { id => $_->{id}, 
+                                                     name => $_->{name}, 
+                                                     locationX => $_->{long}, 
+                                                     locationY => $_->{lat}  } } 
+                                             sort { $a->{name} cmp $b->{name} } 
+                                             values %stationlist ] };
+
         return  [ 200, [ 'Content-Type' => 'application/json; charset=UTF-8' ], [ $json ] ];
 
+    } elsif ($format =~ m/jsonp$/i ) {
+
+        my ($callback) = ($param->{callback} || 'callback' =~ m/^([\w_]+)$/);
+
+        $json ||= encode_json { station => [ map { { id => $_->{id}, 
+                                                     name => $_->{name}, 
+                                                     locationX => $_->{long}, 
+                                                     locationY => $_->{lat}  } } 
+                                             sort { $a->{name} cmp $b->{name} } 
+                                             values %stationlist ] };
+        return  [ 200, [ 'Content-Type' => 'application/javascript; charset=UTF-8' ], [ "$callback($json);" ] ];
     }
 
     return  [ 500, [ 'Content-Type' => 'text/plain' ], [ 'error' ] ];
