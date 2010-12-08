@@ -15,7 +15,7 @@ our $xml;
 
 sub read_csv_files {
     for (qw/BE FR NL INT/) {
-        open my $fh, '<', "db/$_.csv" or die $!; 
+        open my $fh, '<:encoding(UTF-8)', "db/$_.csv" or die $!; 
         while(my $line = readline $fh) {
             chomp $line;
             my ($id, $name, $lat, $long, $region, $lang, $usr01) = split /;/, $line;
