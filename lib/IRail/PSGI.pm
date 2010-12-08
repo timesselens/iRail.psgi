@@ -55,7 +55,7 @@ our $stations = sub {
 
     }
 
-    return  [ 200, [ 'Content-Type' => 'text/html' ], [ 'OK' ] ];
+    return  [ 500, [ 'Content-Type' => 'text/plain' ], [ 'error' ] ];
 
     
 };
