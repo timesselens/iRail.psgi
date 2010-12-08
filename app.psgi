@@ -1,14 +1,23 @@
 #!/usr/bin/perl
-use Plack::Runner;
 use Plack::Builder;
-use IRail::PSGI;
+use IRail::PSGI::Stations;
 
 #sub status { [ shift, [ 'Content-Type' => 'text/plain' ], [ shift ] ] }
 
 builder {
     enable 'Plack::Middleware::Static', path => qr{^/(images|js|html|static|css|favicon\.ico)}, root => 'html/';
     mount '/stations/' => builder { 
-        $IRail::PSGI::stations 
+        enable '+WebHive::Middleware::Cache', config => { driver => 'Memory', global => 1 };
+
+        # complex caching example
+        # enable '+WebHive::Middleware::Cache', config => { driver   => 'Memcached',
+        #                                                   servers  => [ "10.0.0.15:11211", "10.0.0.15:11212" ],
+        #                                                   l1_cache => {
+        #                                                       driver     => 'File',
+        #                                                       root_dir   => '/path/to/root',
+        #                                                       l1_cache   => { driver => 'Memory' }
+        #                                                 };
+        $IRail::PSGI::Stations::API 
     };
 }
 

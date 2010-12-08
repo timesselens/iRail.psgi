@@ -4,11 +4,17 @@ use Test::More;
 use Data::Dumper;
 use HTTP::Request::Common;
 use Plack::Builder;
-use IRail::PSGI;
+use IRail::PSGI::Stations;
 use Plack::App::Proxy;
+use WebHive::Middleware::Cache;
 
 # this is a small psgi application with only one bound url
-my $app = builder { mount '/stations/' => builder { $IRail::PSGI::stations } };
+my $app = builder { 
+    mount '/stations/' => builder { 
+        enable '+WebHive::Middleware::Cache', config => { driver => 'Memory', global => 1 };
+        $IRail::PSGI::Stations::API 
+    } 
+};
 
 # this is a psgi proxy application pointing to dev.api.irail.be for all urls
 my $proxy_app = builder { mount "/" => Plack::App::Proxy->new(remote => "http://dev.api.irail.be/")->to_app; };
