@@ -4,7 +4,7 @@ use warnings;
 use Plack::Request;
 use WebHive::Log;
 use List::Util qw/max/;
-
+use JSON::XS;
 
 # station loading ###########################################################################
 
@@ -12,6 +12,7 @@ our %searchlist;
 our %stationlist;
 our $timestamp;
 our $xml; 
+our $json;
 
 sub read_csv_files {
     for (qw/BE FR NL INT/) {
@@ -52,6 +53,11 @@ our $stations = sub {
         ));
     
         return [ 200, [ 'Content-Type' => 'text/xml' ], [ $xml ] ];
+
+    } elsif ($format =~ m/json/i) {
+
+        $json ||= encode_json { station => [ map { { id => $_->{id}, name => $_->{name}, locationX => $_->{long}, locationY => $_->{lat}  } } sort { $a->{name} cmp $b->{name} } values %stationlist ] };
+        return  [ 200, [ 'Content-Type' => 'application/json; charset=UTF-8' ], [ $json ] ];
 
     }
 
