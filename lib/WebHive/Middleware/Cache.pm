@@ -13,13 +13,15 @@ sub prepare_app {
 
     die "config argument required (see CHI)" unless $self->config;
     die "config argument needs te be a hash" unless ref $self->config eq "HASH";
+
+    my @args = (%{$self->config});
+    $self->{_cache} = CHI->new(@args) or die $!;
 }
 
 sub call {
     my ($self, $env) = @_;
 
-    my @args = (%{$self->config});
-    my $cache = $env->{cache} = CHI->new(@args) or die $!;
+    $env->{cache} = $self->{_cache};
 
     my $ret = $self->app->($env);
 
