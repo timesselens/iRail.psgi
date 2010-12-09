@@ -37,7 +37,7 @@ sub read_csv_files {
 
 sub construct_xml {
     my ($stationlist,$lang) = @_;
-    return join("\n",(
+    return encode('UTF-8',join("\n",(
           '<?xml version="1.0" encoding="UTF-8"?>',
           '<stations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="stations.xsd" version="1.0" timestamp="'.$timestamp.'">',
             (map { '<station id="'.$_->{id}.'" location="'.$_->{lat}.' '.$_->{long}.'" locationY="'.$_->{lat}.'" locationX="'.$_->{long}.'">'. $_->{name}.'</station>' }
@@ -45,18 +45,18 @@ sub construct_xml {
              #FIXME: grep { if($lang) { $_->{lang} =~ m/$lang/ } else { $_->{lang} =~ m/\*/ } }
              values (%$stationlist)),
           '</stations>',
-    ));
+    )));
 }
 
 sub construct_json {
     my ($stationlist,$lang) = @_;
-    return encode_json { station => [ map { { id => $_->{id}, 
-                                              name => $_->{name}, 
-                                              locationX => $_->{long}, 
-                                              locationY => $_->{lat}  } } 
-                                      sort { $a->{name} cmp $b->{name} } 
-                                      #FIXME: grep { if($lang) { $_->{lang} =~ m/$lang/ } else { $_->{lang} =~ m/\*/ } }
-                                      values %$stationlist ] };
+    return encode('UTF-8',encode_json { station => [ map { { id => $_->{id}, 
+                                                             name => $_->{name}, 
+                                                             locationX => $_->{long}, 
+                                                             locationY => $_->{lat}  } } 
+                                                     sort { $a->{name} cmp $b->{name} } 
+                                                     #FIXME: grep { if($lang) { $_->{lang} =~ m/$lang/ } else { $_->{lang} =~ m/\*/ } }
+                                                     values %$stationlist ] });
 }
 
 # external API ##############################################################################
@@ -70,7 +70,8 @@ our $API= sub {
     my $stationlist = $cache->get('stationlist');
 
     # if there is no cache, build the values from the csv files
-    unless ($stationlist)  { $stationlist = read_csv_files(); $cache->set('stationlist', $stationlist, '1 week') }
+    unless (defined $stationlist)  { $stationlist = read_csv_files(); $cache->set('stationlist', $stationlist, '1 week') }
+
 
     # untaint the incoming variables (think XSS)
     my ($lang) = ($param->{lang} || 'nl' =~ m/^(nl|fr|en|de)$/io); 
@@ -80,25 +81,25 @@ our $API= sub {
     my $export = {
         xml => sub {   
             my $xml = $cache->get("stations_xml_$lang");
-            unless ($xml) { $xml = construct_xml($stationlist,$lang); 
-                            $cache->set("stations_xml_$lang", $xml, '1 week') } 
+            unless (defined $xml) { $xml = construct_xml($stationlist,$lang); 
+                                    $cache->set("stations_xml_$lang", $xml, '1 week') } 
 
-            return [ 200, [ 'Content-Type' => 'text/xml' ], [ encode('UTF-8',$cache->get("stations_xml_$lang")) ] ];
+            return [ 200, [ 'Content-Type' => 'text/xml' ], [ $cache->get("stations_xml_$lang") ] ];
         },
         json => sub {
             my $json = $cache->get("stations_json_$lang");
-            unless ($json) { $json = construct_json($stationlist,$lang); 
-                             $cache->set("stations_json_$lang", $json, '1 week') } 
+            unless (defined $json) { $json = construct_json($stationlist,$lang); 
+                                     $cache->set("stations_json_$lang", $json, '1 week') } 
 
-            return  [ 200, [ 'Content-Type' => 'application/json; charset=UTF-8' ], [ encode('UTF-8',$cache->get("stations_json_$lang")) ] ];
+            return  [ 200, [ 'Content-Type' => 'application/json; charset=UTF-8' ], [ $cache->get("stations_json_$lang") ] ];
         },
         jsonp => sub {
             my ($callback) = ($param->{callback} || 'callback' =~ m/^([\w_]+)$/);
             my $json = $cache->get("stations_json_$lang");
-            unless ($json) { $json = construct_json($stationlist,$lang); 
-                             $cache->set("stations_json_$lang", $json, '1 week') } 
+            unless (defined $json) { $json = construct_json($stationlist,$lang); 
+                                     $cache->set("stations_json_$lang", $json, '1 week') } 
 
-            return  [ 200, [ 'Content-Type' => 'application/javascript; charset=UTF-8' ], [ encode('UTF-8',"$callback(" . $cache->get("stations_json_$lang") . ");") ] ];
+            return  [ 200, [ 'Content-Type' => 'application/javascript; charset=UTF-8' ], [ "$callback(" . $cache->get("stations_json_$lang") . ");" ] ];
         }
 
     };
