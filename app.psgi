@@ -7,7 +7,9 @@ use IRail::PSGI::Stations;
 builder {
     enable 'Plack::Middleware::Static', path => qr{^/(images|js|html|static|css|favicon\.ico)}, root => 'html/';
     mount '/stations/' => builder { 
-        enable '+WebHive::Middleware::Cache', config => { driver => 'Memory', global => 1 };
+        #enable 'Static', path => qr#/#, root => 'stations/';
+        #enable 'XSendfile';
+        #enable '+WebHive::Middleware::Cache', config => { driver => 'File', global => 1 };
 
         # complex caching example
         # enable '+WebHive::Middleware::Cache', config => { driver   => 'Memcached',

@@ -11,7 +11,6 @@ use WebHive::Middleware::Cache;
 # this is a small psgi application with only one bound url
 my $app = builder { 
     mount '/stations/' => builder { 
-        enable '+WebHive::Middleware::Cache', config => { driver => 'Memory', global => 1 };
         $IRail::PSGI::Stations::API 
     } 
 };
