@@ -102,11 +102,16 @@ our $API = sub {
                 $_->set_att(id => $_->pos); 
 
                 # extract and compose the vehicle IDs
-                my $silly_xpath = 'vias/via/Journey/JourneyAttributeList/JourneyAttribute/Attribute[@type="NAME"]/AttributeVariant/Text';
-                my @vehicles = map { $_->text_only } ($_->get_xpath($silly_xpath));
+                my $silly_xpath = sub { 'vias/via/Journey/JourneyAttributeList/JourneyAttribute/Attribute[@type="'.shift.'"]/AttributeVariant/Text' };
+                my @vehicles = map { $_->text_only } ($_->get_xpath($silly_xpath->("NAME")));
                 $_->first_child('departure')->insert_new_elt('first_child', vehicle => $vehicles[0]);
                 $_->first_child('arrival')->insert_new_elt('first_child', vehicle => $vehicles[$#vehicles]);
 
+                # add the direction to the main connection and vias
+                my @directions = map { $_->text_only } ($_->get_xpath($silly_xpath->("DIRECTION")));
+                $_->insert_new_elt('first_child', 'direction' => $directions[0]);
+
+                # delete the cruft
                 map { $_->delete } $_->get_xpath('//vias/via/Journey');
 
                 # add a url attribute to the connection
@@ -122,6 +127,7 @@ our $API = sub {
                     $via[$_+1]->first_child('departure')->move(after => $via[$_]->first_child('arrival')); 
                     $via[$_]->insert_new_elt('last_child', timeBetween => 
                         $via[$_]->first_child('departure')->first_child('time')->text_only - $via[$_]->first_child('arrival')->first_child('time')->text_only);
+                    $via[$_]->insert_new_elt('last_child', direction => $directions[$_+1]);
                 } 
                 $via[$#via]->delete;
                 
