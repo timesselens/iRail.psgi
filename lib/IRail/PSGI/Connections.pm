@@ -226,7 +226,7 @@ our $API = sub {
        
     $t->parse($res2->decoded_content());
 
-    return [ 200, [ 'Content-Type' => 'text/xml' ], [ $t->sprint() ] ];
+    return [ 200, [ 'Content-Type' => 'text/xml; charset=UTF-8' ], [ encode('UTF-8',$t->sprint()) ] ];
 
 };
 
