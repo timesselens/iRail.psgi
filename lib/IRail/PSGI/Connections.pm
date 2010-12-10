@@ -7,6 +7,7 @@ use Encode;
 use HTTP::Request;
 use JSON::XS;
 use List::Util qw/max reduce/;
+use IRail::PSGI::Stations;
 use LWP::UserAgent;
 use Plack::Request;
 use WebHive::Log;
@@ -16,6 +17,13 @@ use XML::Twig;
 # AUTHOR: Tim Esselens <tim.esselens@gmail.com>
 
 our $VERSION = 0.001;
+
+# a helper function which normalized the station space and tries to look up the station id
+sub get_station_id {
+    my ($name) = @_; $name =~ s/^\s*|\s*$//g;
+    my ($stationidre) = grep { $name =~ $_ } (keys %IRail::PSGI::Stations::searchlist);
+    return $IRail::PSGI::Stations::searchlist{$stationidre}{stationid};
+}
 
 # external API ##############################################################################
 our $API = sub {
@@ -86,7 +94,7 @@ our $API = sub {
     my $res2 = $ua->request($http_req2);
 
     croak "was unsuccessful in POSTing data" unless $res2->is_success;
-    
+
     my $t = new XML::Twig(
         twig_roots => { 'ResC/ConRes/ConnectionList/Connection'=> 1 },
         twig_handlers => {
@@ -108,8 +116,8 @@ our $API = sub {
                 $_->first_child('arrival')->insert_new_elt('first_child', vehicle => $vehicles[$#vehicles]);
 
                 # add the direction to the main connection and vias
-                my @directions = map { $_->text_only } ($_->get_xpath($silly_xpath->("DIRECTION")));
-                $_->insert_new_elt('first_child', 'direction' => $directions[0]);
+                my @directions = map { s/\s*\[[^]]+\]$//; $_ } map { $_->text_only } ($_->get_xpath($silly_xpath->("DIRECTION")));
+                $_->insert_new_elt('first_child', 'direction' => { stationid => get_station_id($directions[0]) }, $directions[0] );
 
                 # delete the cruft
                 map { $_->delete } $_->get_xpath('//vias/via/Journey');
@@ -127,7 +135,7 @@ our $API = sub {
                     $via[$_+1]->first_child('departure')->move(after => $via[$_]->first_child('arrival')); 
                     $via[$_]->insert_new_elt('last_child', timeBetween => 
                         $via[$_]->first_child('departure')->first_child('time')->text_only - $via[$_]->first_child('arrival')->first_child('time')->text_only);
-                    $via[$_]->insert_new_elt('last_child', direction => $directions[$_+1]);
+                    $via[$_]->insert_new_elt('last_child', direction => { stationid => get_station_id($directions[$_+1]) },$directions[$_+1]);
                 } 
                 $via[$#via]->delete;
                 
