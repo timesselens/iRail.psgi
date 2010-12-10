@@ -30,13 +30,13 @@ our $API = sub {
     croak "from not defined" unless $from;
     croak "to not defined" unless $to;
 
-    my ($lang) = (($param->{lang} || 'nl') =~ m/^(fr|de|en|nl)$/);
+    my ($lang) = (($param->{lang} || 'nl') =~ m/^(fr|de|en|nl)$/io);
     my ($date) = (($param->{date} || time2str('%Y%m%d',time) ) =~ m/^(\d+\W?\d+\W?\d+)$/io); # d-m-y
     my ($time) = (($param->{'time'} || time2str('%H%M',time)) =~ m/^(\d+\W?\d+)$/io); # hh-mm
     my ($epoch) = (($param->{epoch} || '') =~ m/^(\d+)$/io);
     my ($timesel) = map { /^a/ and 0 || /^d/ and 1 || 1 } (($param->{timesel} || 'a') =~ m/^(a(?:rrive)?|d(?:epart)?)$/io); # a(rrive) or d(epart)
     my ($type) = (($param->{type} || 'train') =~ m/^(train|bus|taxi)$/io);
-    my ($results) = map { $_ > 6 ? 6 : $_  } (($param->{results} || 6) =~ m/^(\d+)$/);
+    my ($results) = map { $_ > 6 ? 6 : $_  } (($param->{results} || 6) =~ m/^(\d+)$/io);
 
     my $ua = new LWP::UserAgent;
        $ua->agent("IRail::PSGI/$VERSION");
@@ -139,7 +139,7 @@ our $API = sub {
 
                 $_->set_tag('station'); 
                 $_->del_att(qw/externalStationNr/); 
-                $_->set_text($_->att('name') =~ m/(.*?)(?:\ \[[^]]+\])?$/);
+                $_->set_text($_->att('name') =~ m/(.*?)(?:\ \[[^]]+\])?$/io);
                 $_->set_att(x => $x, y => $y); 
             },
 
