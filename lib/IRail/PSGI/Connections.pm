@@ -13,6 +13,7 @@ use WebHive::Log;
 use XML::Twig;
 
 # ABSTRACT: PSGI interface for IRail API
+# AUTHOR: Tim Esselens <tim.esselens@gmail.com>
 
 our $VERSION = 0.001;
 
