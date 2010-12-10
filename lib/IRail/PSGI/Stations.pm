@@ -31,14 +31,14 @@ sub read_csv_files {
     
     ($timestamp) = max map { (stat("db/$_.csv"))[9] } (qw/BE FR NL INT/);
 }
+    
+unless (scalar %stationlist) { read_csv_files() }
 
 # external API ##############################################################################
 our $API = sub {
     my $env = shift;
     my $req = new Plack::Request($env);
     my $param = $req->parameters();
-
-    unless (scalar %stationlist) { read_csv_files() }
 
     my ($lang) = ($param->{lang} || 'all' =~ m/^(nl|fr|en|de|all)$/io);
     my ($format) = ($param->{format} || 'xml' =~ m/^(xml|json|jsonp)$/io);
