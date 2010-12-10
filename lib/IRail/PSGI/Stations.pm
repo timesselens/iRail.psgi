@@ -18,21 +18,43 @@ our $timestamp;
 our %xml; 
 our %json;
 
+sub normalized_station_re {
+    my $name = shift;
+
+    my $re = lc $name;
+
+    $re =~ s/(^\s*|\s*$)//go;
+    $re =~ s/\s*\([^)]+\)$//go;
+    $re =~ s/\s*\[[^]]+\]$//go;
+    $re =~ s/\W/\\W\?/gio;
+    $re =~ s/\-/[\\W\-]*/gio;
+    $re =~ s/([äâ])/\[a$1\]/gio;
+    $re =~ s/([ç])/\[c$1\]/gio;
+    $re =~ s/([éè])/\[e$1\]/gio;
+    $re =~ s/([ïî])/\[i$1\]/gio;
+    $re =~ s/([ô])/\[o$1\]/gio;
+    $re =~ s/([ü])/\[u$1\]/gio;
+    $re =~ s/\s*STATION\s*$//gio; # yeah that was a wonderful idea!
+
+    return qr/^$re/i;
+}
+
 sub read_csv_files {
+    warn "READING CSV FILES";
     for (qw/BE FR NL INT/) {
         open my $fh, '<:encoding(UTF-8)', "db/$_.csv" or die $!; 
         while(my $line = readline $fh) {
             chomp $line;
-            my ($id, $name, $lat, $long, $region, $lang, $usr01) = split /\s*;\s*/, $line;
-            $searchlist{$name} = { lang => $lang };
-            $stationlist{$id} = { id => $id, name => $name, lang => $lang, lat => $lat, long => $long, region => $region };
+            my ($id, $name, $lat, $long, $stationid, $lang, $usr01) = split /\s*;\s*/, $line;
+            $searchlist{normalized_station_re($name)} = { lang => $lang, stationid => $stationid };
+            $stationlist{$id} = { id => $id, name => $name, re => normalized_station_re($name), lang => $lang, lat => $lat, long => $long, stationid => $stationid };
         }
         close $fh;
     }
     
     ($timestamp) = max map { (stat("db/$_.csv"))[9] } (qw/BE FR NL INT/);
 }
-    
+   
 unless (scalar %stationlist) { read_csv_files() }
 
 # external API ##############################################################################
