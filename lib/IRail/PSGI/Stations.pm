@@ -7,6 +7,8 @@ use List::Util qw/max/;
 use JSON::XS;
 use Encode;
 use encoding 'utf-8';
+use parent 'Exporter';
+our @EXPORT = qw/&get_station_id/;
 
 # ABSTRACT: PSGI interface for IRail API
 
@@ -56,6 +58,13 @@ sub read_csv_files {
 }
    
 unless (scalar %stationlist) { read_csv_files() }
+
+# exported functions ##########################################################################
+sub get_station_id {
+    my ($name) = @_; $name =~ s/^\s*|\s*$//g;
+    my ($stationidre) = grep { $name =~ $_ } (keys %IRail::PSGI::Stations::searchlist);
+    return $IRail::PSGI::Stations::searchlist{$stationidre}{stationid};
+}
 
 # external API ##############################################################################
 our $API = sub {

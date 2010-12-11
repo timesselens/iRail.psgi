@@ -7,7 +7,7 @@ use Encode;
 use HTTP::Request;
 use JSON::XS;
 use List::Util qw/max reduce/;
-use IRail::PSGI::Stations;
+use IRail::PSGI::Stations qw/get_station_id/;
 use LWP::UserAgent;
 use Plack::Request;
 use WebHive::Log;
@@ -18,12 +18,6 @@ use XML::Twig;
 
 our $VERSION = 0.001;
 
-# a helper function which normalized the station space and tries to look up the station id
-sub get_station_id {
-    my ($name) = @_; $name =~ s/^\s*|\s*$//g;
-    my ($stationidre) = grep { $name =~ $_ } (keys %IRail::PSGI::Stations::searchlist);
-    return $IRail::PSGI::Stations::searchlist{$stationidre}{stationid};
-}
 
 # external API ##############################################################################
 our $API = sub {
