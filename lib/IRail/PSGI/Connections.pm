@@ -61,7 +61,7 @@ our $API = sub {
 
     my ($from_id, $to_id) = ($res->decoded_content =~ m/externalId="([^"]+)"/gio);
 
-    my $trainsonly = '000000100000000'; # trains #'000000000100000'; # bus
+    my $trainsonly = '000000100000000'; # trains # my $busonly = '000000000100000'; # bus
     my ($back,$_to,$the,$future) = ($results * $timesel, $to, 'flux capacitor',$results * (-1 * ($timesel-1)));
 
     my $data2 = qq{<?xml version="1.0 encoding="UTF-8"?>
