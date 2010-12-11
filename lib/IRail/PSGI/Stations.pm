@@ -42,7 +42,6 @@ sub normalized_station_re {
 }
 
 sub read_csv_files {
-    warn "READING CSV FILES";
     for (qw/BE FR NL INT/) {
         open my $fh, '<:encoding(UTF-8)', "db/$_.csv" or die $!; 
         while(my $line = readline $fh) {
