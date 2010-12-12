@@ -36,7 +36,7 @@ our $API = sub {
     my ($date) = (($param->{date} || time2str('%Y%m%d',time) ) =~ m/^(\d+\W?\d+\W?\d+)$/io); # d-m-y
     my ($time) = (($param->{'time'} || time2str('%H%M',time)) =~ m/^(\d+\W?\d+)$/io); # hh-mm
     my ($epoch) = (($param->{epoch} || '') =~ m/^(\d+)$/io);
-    my ($timesel) = map { /^a/ && 0 or /^d/ && 1 } (($param->{timesel} || 'a') =~ m/^(a(?:rrive)?|d(?:epart)?)/io); # a(rrive) or d(epart)
+    my ($timesel) = map { m/^a/ ? "0" : "1" } (($param->{timesel} || 'a') =~ m/^(a(?:rrive)?|d(?:epart)?)/io); # a(rrive) or d(epart)
     my ($type) = (($param->{type} || 'train') =~ m/^(train|bus|taxi)$/io);
     my ($results) = map { $_ > 6 ? 6 : $_  } (($param->{results} || 6) =~ m/^(\d+)$/io);
 
