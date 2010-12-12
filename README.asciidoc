@@ -1,1 +1,67 @@
-initial commit of iRail PSGI API implementation (developer preview)
+iRail PSGI backend
+==================
+
+This is a (re)implementation of the iRail API running on http://api.irail.be
+description of this API can be found on http://project.irail.be/wiki/APIv1
+
+Installation
+------------
+
+.install App::cpanminus using your cpan shell or curl
+-------------------------------------------------------------------
+% sudo cpan install App::cpanminus
+# or
+% curl -L http://cpanmin.us | sudo perl - --self-upgrade
+-------------------------------------------------------------------
+
+.install dependencies for iRail PSGI backend
+-------------------------------------------------------------------------
+% cpanm -S Plack Starman Test::Most Date::Format JSON::XS XML::Twig XML::Simple
+-------------------------------------------------------------------------
+
+WARNING: the logging code has a dependency on Apache2::* do not install these
+by hand, rather install mod_perl2 using your dist packages. 
+
+-------------------------------------------------------------------------
+% yum install mod_perl
+% pacman -S mod_perl
+# <add yours here>
+-------------------------------------------------------------------------
+
+Running
+-------
+
+.start the PSGI with a server of your chosing
+-------------------------------------------------------------------------
+% plackup -I lib app.psgi
+# -or-
+% starman -I lib app.psgi
+-------------------------------------------------------------------------
+
+.point your browser to the API urls
+
+- http://localhost:5000/stations/
+- http://localhost:5000/connections/?from=brussel noord&to=oostende
+- http://localhost:5000/liveboard/?station=brussel noord
+
+
+Patching
+--------
+
+.start the server with -r flag
+-------------------------------------------------------------------------
+% plackup -r -I lib app.psgi
+-------------------------------------------------------------------------
+
+.alter some code in lib, using warn as debugger
+-------------------------------------------------------------------------------------------------------------------
+my $http_req = new HTTP::Request(POST => "http://hari.b-rail.be/Hafas/bin/extxml.exe", [], $data);
+my $res = $ua->request($http_req);
+
+warn "object %o, string %s", [1, 2, { foo => 'bar' }], "foobarstring";
+
+warn "HTTP::Request %o, content: %s, code: %s", $http, $res->decoded_content, $res->code;
+--------------------------------------------------------------------------------------------------------------------
+
+
+// vim: ft=asciidoc
