@@ -84,7 +84,7 @@ our $API = sub {
                          </departure># 
                 } @liveboard;
 
-    return [ 200, [ 'Content-Type' => 'text/xml' ], [ $xml ] ];
+    return [ 200, [ 'Content-Type' => 'text/xml; charset=UTF-8' ], [ encode("UTF-8",$xml) ] ];
 
 };
 
