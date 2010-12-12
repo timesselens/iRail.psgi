@@ -4,14 +4,17 @@ use warnings;
 use Carp;
 use Date::Format;
 use Encode;
+use HTML::Entities;
 use HTTP::Request;
+use IRail::PSGI::Stations qw/get_station_id/;
 use JSON::XS;
 use List::Util qw/max reduce/;
 use LWP::UserAgent;
 use Plack::Request;
 use WebHive::Log;
-use IRail::PSGI::Stations qw/get_station_id/;
 use XML::Twig;
+
+use encoding 'utf-8';
 
 # ABSTRACT: PSGI interface for IRail API
 # AUTHOR: Tim Esselens <tim.esselens@gmail.com>
@@ -55,6 +58,8 @@ our $API = sub {
         if ( $line =~ m#<font color="DarkGray">#)                   { $train{left} = 1 };
         if ( $line =~ m#(\d+):(\d+)</a>#)                           { $train{epoch} = $epoch + (3600 * $1) + (60 * $2); 
                                                                       $train{departs} = time2str("%Y-%m-%dT%H:%M:%SZ",$train{epoch},"ZULU"); }
+        if ( $line =~ m#&nbsp;([\w'][^>]+?)&nbsp;#)                 { $train{station} = encode('UTF-8',decode_entities($1)); 
+                                                                      $train{stationid} = get_station_id($train{station}) };
         if ( $line =~ m#&tid=(\d+)#)                                { $train{tid} = $1 };
         if ( $line =~ m#&nbsp;(.*?)&nbsp;#)                         { $train{station} = $1; $train{stationid} = get_station_id($1); };
         if ( $line =~ m#<font color="Red">\s*\+(\d+)'\s*</font>#)   { $train{delay} = int($1 * 60) };
