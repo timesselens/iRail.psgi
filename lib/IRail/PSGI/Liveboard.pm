@@ -54,16 +54,15 @@ our $API = sub {
     for (split /[\r\n]/, $res->decoded_content) {
         next unless /^\s*<td/;
         my $line = $_;
-        my %train = ( delay => 0, work => 0, platform => 'NA', changedplatform => 0 );
+        my %train = ( delay => 0, left => 0, work => 0, platform => 'NA', changedplatform => 0 );
         my ($epoch) = 86400 * int ( time / 86400 );
 
-        if ( $line =~ m#<font color="DarkGray">#)                   { $train{left} = 1 };
         if ( $line =~ m#(\d+):(\d+)</a>#)                           { $train{epoch} = $epoch + (3600 * $1) + (60 * $2); 
                                                                       $train{departs} = time2str("%Y-%m-%dT%H:%M:%SZ",$train{epoch},"ZULU"); }
         if ( $line =~ m#&nbsp;([\w'][^>]+?)&nbsp;#)                 { $train{station} = encode('UTF-8',decode_entities($1)); 
                                                                       $train{stationid} = get_station_id($train{station}) };
         if ( $line =~ m#&tid=(\d+)#)                                { $train{tid} = $1 };
-        if ( $line =~ m#&nbsp;(.*?)&nbsp;#)                         { $train{station} = $1; $train{stationid} = get_station_id($1); };
+        if ( $line =~ m#<font color="DarkGray">#)                   { $train{left} = 1 };
         if ( $line =~ m#<font color="Red">\s*\+(\d+)'\s*</font>#)   { $train{delay} = int($1 * 60) };
         if ( $line =~ m#<img src="/mobile/images/Work.png"#)        { $train{work} = 1 }
         if ( $line =~ m#\[([\w]+)&nbsp;Spoor&nbsp;(\d+)\]# )        { $train{vehicle} = $1; $train{platform} = int($2); }
@@ -72,12 +71,12 @@ our $API = sub {
         push @liveboard, \%train;
     }
 
-    my ($xml) = map { '<?xml version="1.0" encoding="UTF-8"?>'.
-                      '<liveboard version="1.0" timestamp="'.time.'">'.$_.'</liveboard>' }
-                map { '<station stationid="'.$sid.'">'.$station.'</station>'.
+    my ($xml) = map { '<?xml version="1.0" encoding="UTF-8"?>'."\n".
+                      '<liveboard version="1.0" timestamp="'.time.'">'."\n".$_.'</liveboard>' }
+                map { '<station stationid="'.$sid.'">'.$station.'</station>'."\n".
                       '<departures number="'.scalar @liveboard.'">'.$_.'</departures>' } 
                 reduce { $a.$b}  
-                map { qq#<departure id="0" delay="$_->{delay}">
+                map { qq#<departure delay="$_->{delay}" left="$_->{left}">
                               <time formatted="$_->{departs}">$_->{epoch}</time>
                               <vehicle>$_->{vehicle}</vehicle>
                               <platform changed="$_->{changedplatform}">$_->{platform}</platform>
