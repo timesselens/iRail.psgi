@@ -42,6 +42,8 @@ our $API = sub {
        $ua->agent("IRail::PSGI/$VERSION");
        $ua->timeout(10);
 
+    croak "sid not found" unless $sid;
+
     my $http_req = new HTTP::Request(GET => "http://www.railtime.be/mobile/SearchStation.aspx?l=$lang&tr=$time&sid=$sid&da=$timesel&p=2");
     my $res = $ua->request($http_req);
 
