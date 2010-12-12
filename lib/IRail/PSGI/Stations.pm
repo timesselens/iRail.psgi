@@ -29,14 +29,12 @@ sub normalized_station_re {
     $re =~ s/\s*\([^)]+\)$//go;
     $re =~ s/\s*\[[^]]+\]$//go;
     $re =~ s/\W/\\W\?/gio;
-    $re =~ s/\-/[\\W\-]*/gio;
     $re =~ s/([äâ])/\[a$1\]/gio;
     $re =~ s/([ç])/\[c$1\]/gio;
     $re =~ s/([éè])/\[e$1\]/gio;
     $re =~ s/([ïî])/\[i$1\]/gio;
     $re =~ s/([ô])/\[o$1\]/gio;
     $re =~ s/([ü])/\[u$1\]/gio;
-    $re =~ s/\s*STATION\s*$//gio; # yeah that was a wonderful idea!
 
     return qr/^$re/i;
 }
@@ -47,8 +45,9 @@ sub read_csv_files {
         while(my $line = readline $fh) {
             chomp $line;
             my ($id, $name, $lat, $long, $stationid, $lang, $usr01) = split /\s*;\s*/, $line;
-            $searchlist{normalized_station_re($name)} = { lang => $lang, stationid => $stationid };
-            $stationlist{$id} = { id => $id, name => $name, re => normalized_station_re($name), lang => $lang, lat => $lat, long => $long, stationid => $stationid };
+            my $re = normalized_station_re($name);
+            $searchlist{$re} = { lang => $lang, stationid => $stationid } if $re;
+            $stationlist{$id} = { id => $id, name => $name, re => $re, lang => $lang, lat => $lat, long => $long, stationid => $stationid };
         }
         close $fh;
     }
@@ -60,9 +59,10 @@ unless (scalar %stationlist) { read_csv_files() }
 
 # exported functions ##########################################################################
 sub get_station_id {
-    my ($name) = @_; $name =~ s/^\s*|\s*$//g;
+    my ($name) = @_; $name =~ s/^\s*|\s*$//g; 
     my ($stationidre) = grep { $name =~ $_ } (keys %IRail::PSGI::Stations::searchlist);
-    return $IRail::PSGI::Stations::searchlist{$stationidre}{stationid};
+    return unless $stationidre;
+    return $searchlist{$stationidre}{stationid} if exists $searchlist{$stationidre};
 }
 
 # external API ##############################################################################
