@@ -14,6 +14,7 @@ our @EXPORT = qw/&get_station_id &get_station_sid/;
 
 # station loading ###########################################################################
 
+our %searchlist_l1;
 our %searchlist;
 our %stationlist;
 our $timestamp;
@@ -45,6 +46,8 @@ sub read_csv_files {
             chomp $line;
             my ($id, $name, $lat, $long, $stationid, $lang, $usr01) = split /\s*;\s*/, $line;
             my $re = normalized_station_re($name);
+            (my $compact = lc $name) =~ s/\W//gio;
+            $searchlist_l1{$compact} = { lang => $lang, id => $id, stationid => $stationid };
             $searchlist{$re} = { lang => $lang, id => $id, stationid => $stationid } if $re;
             $stationlist{$id} = { id => $id, name => $name, re => $re, lang => $lang, lat => $lat, long => $long, stationid => $stationid };
         }
@@ -58,18 +61,26 @@ unless (scalar %stationlist) { read_csv_files() }
 
 # exported functions ##########################################################################
 sub search_station {
+}
+sub search_station_re {
     my ($name) = @_; $name =~ s/^\s*|\s*$//g; 
     my ($stationidre) = grep { $name =~ $_ } (keys %IRail::PSGI::Stations::searchlist);
     return $stationidre;
 }
 
 sub get_station_id {
-    my $stationidre = search_station(shift);
+    my $name = shift; 
+    (my $compact = lc $name) =~ s/\W//gio;
+    return $searchlist_l1{$compact}{id} if exists $searchlist_l1{$compact};
+    my $stationidre = search_station($name);
     return $searchlist{$stationidre}{id} if $stationidre && exists $searchlist{$stationidre};
 }
 
 sub get_station_sid {
-    my $stationidre = search_station(shift);
+    my $name = shift; 
+    (my $compact = lc $name) =~ s/\W//gio;
+    return $searchlist_l1{$compact}{id} if exists $searchlist_l1{$compact};
+    my $stationidre = search_station($name);
     return $searchlist{$stationidre}{stationid} if $stationidre && exists $searchlist{$stationidre};
 }
 
