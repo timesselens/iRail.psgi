@@ -7,7 +7,7 @@ use Encode;
 use HTTP::Request;
 use JSON::XS;
 use List::Util qw/max reduce/;
-use IRail::PSGI::Stations qw/get_station_id/;
+use IRail::PSGI::Stations qw/get_station_id get_station_sid/;
 use LWP::UserAgent;
 use Plack::Request;
 use WebHive::Log;
@@ -111,7 +111,7 @@ our $API = sub {
 
                 # add the direction to the main connection and vias
                 my @directions = map { s/\s*\[[^]]+\]$//; $_ } map { $_->text_only } ($_->get_xpath($silly_xpath->("DIRECTION")));
-                $_->insert_new_elt('first_child', 'direction' => { stationid => get_station_id($directions[0]) }, $directions[0] ) if($directions[0]);
+                $_->insert_new_elt('first_child', 'direction' => { stationid => get_station_sid($directions[0]) }, $directions[0] ) if($directions[0]);
 
                 # delete the cruft
                 map { $_->delete } $_->get_xpath('//vias/via/Journey');
@@ -129,7 +129,7 @@ our $API = sub {
                     $via[$_+1]->first_child('departure')->move(after => $via[$_]->first_child('arrival')); 
                     $via[$_]->insert_new_elt('last_child', timeBetween => 
                         $via[$_]->first_child('departure')->first_child('time')->text_only - $via[$_]->first_child('arrival')->first_child('time')->text_only);
-                    $via[$_]->insert_new_elt('last_child', direction => { stationid => get_station_id($directions[$_+1]) },$directions[$_+1]) if($directions[$_+1]);
+                    $via[$_]->insert_new_elt('last_child', direction => { stationid => get_station_sid($directions[$_+1]) },$directions[$_+1]) if($directions[$_+1]);
                 } 
                 $via[$#via]->delete;
                 
@@ -142,13 +142,17 @@ our $API = sub {
             },
 
             'Station' => sub { 
-                (my $x = $_->att('x')) =~ s/^(\d)(\d)/$1.$2/; 
-                (my $y = $_->att('y')) =~ s/^(\d{2})(\d)/$1.$2/;
+                my ($station) = ($_->att('name') =~ m/(.*?)(?:\ \[[^]]+\])?$/io);
+                my $id = get_station_id($station);
 
                 $_->set_tag('station'); 
-                $_->del_att(qw/externalStationNr/); 
-                $_->set_text($_->att('name') =~ m/(.*?)(?:\ \[[^]]+\])?$/io);
-                $_->set_att(x => $x, y => $y); 
+                $_->del_att(qw/externalStationNr x y externalId type/); 
+                $_->set_text($station);
+                $_->set_att(id => $id,
+                            name => $station,
+                            stationid => $IRail::PSGI::Stations::stationlist{$id}{stationid}, 
+                            locationX => $IRail::PSGI::Stations::stationlist{$id}{long}, 
+                            locationY => $IRail::PSGI::Stations::stationlist{$id}{lat}); 
             },
 
             'ConSectionList' => sub {
