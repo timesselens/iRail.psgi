@@ -8,7 +8,7 @@ use JSON::XS;
 use Encode;
 use encoding 'utf-8';
 use parent 'Exporter';
-our @EXPORT = qw/&get_station_id/;
+our @EXPORT = qw/&get_station_id &get_station_sid/;
 
 # ABSTRACT: PSGI interface for IRail API
 
@@ -24,7 +24,6 @@ sub normalized_station_re {
     my $name = shift;
 
     my $re = lc $name;
-
     $re =~ s/(^\s*|\s*$)//go;
     $re =~ s/\s*\([^)]+\)$//go;
     $re =~ s/\s*\[[^]]+\]$//go;
@@ -46,7 +45,7 @@ sub read_csv_files {
             chomp $line;
             my ($id, $name, $lat, $long, $stationid, $lang, $usr01) = split /\s*;\s*/, $line;
             my $re = normalized_station_re($name);
-            $searchlist{$re} = { lang => $lang, stationid => $stationid } if $re;
+            $searchlist{$re} = { lang => $lang, id => $id, stationid => $stationid } if $re;
             $stationlist{$id} = { id => $id, name => $name, re => $re, lang => $lang, lat => $lat, long => $long, stationid => $stationid };
         }
         close $fh;
@@ -58,11 +57,20 @@ sub read_csv_files {
 unless (scalar %stationlist) { read_csv_files() }
 
 # exported functions ##########################################################################
-sub get_station_id {
+sub search_station {
     my ($name) = @_; $name =~ s/^\s*|\s*$//g; 
     my ($stationidre) = grep { $name =~ $_ } (keys %IRail::PSGI::Stations::searchlist);
-    return unless $stationidre;
-    return $searchlist{$stationidre}{stationid} if exists $searchlist{$stationidre};
+    return $stationidre;
+}
+
+sub get_station_id {
+    my $stationidre = search_station(shift);
+    return $searchlist{$stationidre}{id} if $stationidre && exists $searchlist{$stationidre};
+}
+
+sub get_station_sid {
+    my $stationidre = search_station(shift);
+    return $searchlist{$stationidre}{stationid} if $stationidre && exists $searchlist{$stationidre};
 }
 
 # external API ##############################################################################
