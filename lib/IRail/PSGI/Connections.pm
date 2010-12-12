@@ -12,6 +12,7 @@ use LWP::UserAgent;
 use Plack::Request;
 use WebHive::Log;
 use XML::Twig;
+use XML::Simple;
 
 # ABSTRACT: PSGI interface for IRail API
 # AUTHOR: Tim Esselens <tim.esselens@gmail.com>
@@ -39,6 +40,7 @@ our $API = sub {
     my ($timesel) = map { m/^a/ ? "0" : "1" } (($param->{timesel} || 'a') =~ m/^(a(?:rrive)?|d(?:epart)?)/io); # a(rrive) or d(epart)
     my ($type) = (($param->{type} || 'train') =~ m/^(train|bus|taxi)$/io);
     my ($results) = map { $_ > 6 ? 6 : $_  } (($param->{results} || 6) =~ m/^(\d+)$/io);
+    my ($format) = ($param->{format} || 'xml' =~ m/^(xml|json|jsonp)$/io);
 
     my $ua = new LWP::UserAgent;
        $ua->agent("IRail::PSGI/$VERSION");
@@ -224,8 +226,24 @@ our $API = sub {
        
     $t->parse($res2->decoded_content());
 
-    return [ 200, [ 'Content-Type' => 'text/xml; charset=UTF-8' ], [ encode('UTF-8',$t->sprint()) ] ];
+    # output transformers ###########################################################################################
+    
+    if($format =~ m/xml/i) {
+        return [ 200, [ 'Content-Type' => 'text/xml; charset=UTF-8' ], [ encode('UTF-8',$t->sprint()) ] ];
 
+    } elsif($format =~ m/json/i) {
+        my $obj = XMLin($t->sprint(),
+                            NoAttr => 1,
+                            SuppressEmpty => 1,
+                            NormaliseSpace => 2,
+                            KeepRoot => 1,
+                            GroupTags => { connections => 'connection', vias => 'via'},
+                            ForceArray => [ 'connection', 'via' ],
+                            KeyAttr => [],
+                      );
+
+        return [ 200, [ 'Content-Type' => 'application/json; charset=UTF-8' ], [ encode('UTF-8',encode_json($obj)) ] ];
+    }
 };
 
 42;
