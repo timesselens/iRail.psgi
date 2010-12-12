@@ -6,7 +6,7 @@ use Date::Format;
 use Encode;
 use HTML::Entities;
 use HTTP::Request;
-use IRail::PSGI::Stations qw/get_station_id/;
+use IRail::PSGI::Stations qw/get_station_id get_station_sid/;
 use JSON::XS;
 use List::Util qw/max reduce/;
 use LWP::UserAgent;
@@ -34,7 +34,7 @@ our $API = sub {
 
     my ($lang) = (($param->{lang} || 'nl') =~ m/^(fr|de|en|nl)$/io);
     my ($time) = (($param->{'time'} || time2str('%H%M',time)) =~ m/^(\d+\W?\d+)$/io); # hh-mm
-    my ($sid) = get_station_id($station);
+    my ($sid) = get_station_sid($station);
     my ($format) = ($param->{format} || 'xml' =~ m/^(xml|json|jsonp)$/io);
     my ($timesel) = map { /^a/ && 'A' or /^d/ && 'D' } (($param->{timesel} || 'a') =~ m/^(a(?:rrive)?|d(?:epart)?)/io); # a(rrive) or d(epart)
 
