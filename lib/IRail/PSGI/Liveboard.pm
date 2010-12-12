@@ -53,14 +53,16 @@ our $API = sub {
 
     for (split /[\r\n]/, $res->decoded_content) {
         next unless /^\s*<td/;
+        next if /Geen halte in gevraagd station/;
+
         my $line = $_;
         my %train = ( delay => 0, left => 0, work => 0, platform => 'NA', changedplatform => 0 );
         my ($epoch) = 86400 * int ( time / 86400 );
 
         if ( $line =~ m#(\d+):(\d+)</a>#)                           { $train{epoch} = $epoch + (3600 * $1) + (60 * $2); 
                                                                       $train{departs} = time2str("%Y-%m-%dT%H:%M:%SZ",$train{epoch},"ZULU"); }
-        if ( $line =~ m#&nbsp;([\w'][^>]+?)&nbsp;#)                 { $train{station} = encode('UTF-8',decode_entities($1)); 
-                                                                      $train{stationid} = get_station_id($train{station}) };
+        if ( $line =~ m#&nbsp;([\w'][^>]+?)&nbsp;#)                 { $train{station} = decode('iso-latin-1',decode_entities($1)); 
+                                                                      $train{stationid} = get_station_id($train{station}) || 'NULL' };
         if ( $line =~ m#&tid=(\d+)#)                                { $train{tid} = $1 };
         if ( $line =~ m#<font color="DarkGray">#)                   { $train{left} = 1 };
         if ( $line =~ m#<font color="Red">\s*\+(\d+)'\s*</font>#)   { $train{delay} = int($1 * 60) };
