@@ -41,6 +41,7 @@ our $API = sub {
     my ($type) = (($param->{type} || 'train') =~ m/^(train|bus|taxi)$/io);
     my ($results) = map { $_ > 6 ? 6 : $_  } (($param->{results} || 6) =~ m/^(\d+)$/io);
     my ($format) = ($param->{format} || 'xml' =~ m/^(xml|json|jsonp)$/io);
+    my ($intervias) = ( $param->{intervias} || 'true' =~ m/^(true|false)$/io);
 
     my $ua = new LWP::UserAgent;
        $ua->agent("IRail::PSGI/$VERSION");
@@ -124,17 +125,18 @@ our $API = sub {
 
 
                 # magle the vias: f([x1,y1],[x2,y2],...[xn,yn]) -> [y1,x2], [y2,x3], ..., [yn-1,xn], [delete];
-                my @via = $_->get_xpath('vias/via');
-                $via[0]->first_child('departure')->delete;
-                # this is an unnatural but wanted off-by-one. 
-                for(0 .. $#via - 1 ) { 
-                    $via[$_+1]->first_child('departure')->move(after => $via[$_]->first_child('arrival')); 
-                    $via[$_]->insert_new_elt('last_child', timeBetween => 
-                        $via[$_]->first_child('departure')->first_child('time')->text_only - $via[$_]->first_child('arrival')->first_child('time')->text_only);
-                    $via[$_]->insert_new_elt('last_child', direction => { stationid => get_station_sid($directions[$_+1]) },$directions[$_+1]) if($directions[$_+1]);
-                } 
-                $via[$#via]->delete;
-                
+                if($intervias =~ m/^true$/) {
+                    my @via = $_->get_xpath('vias/via');
+                    $via[0]->first_child('departure')->delete;
+                    # this is an unnatural but wanted off-by-one. 
+                    for(0 .. $#via - 1 ) { 
+                        $via[$_+1]->first_child('departure')->move(after => $via[$_]->first_child('arrival')); 
+                        $via[$_]->insert_new_elt('last_child', timeBetween => 
+                            $via[$_]->first_child('departure')->first_child('time')->text_only - $via[$_]->first_child('arrival')->first_child('time')->text_only);
+                        $via[$_]->insert_new_elt('last_child', direction => { stationid => get_station_sid($directions[$_+1]) },$directions[$_+1]) if($directions[$_+1]);
+                    } 
+                    $via[$#via]->delete;
+                }
             },
 
             'Platform' => sub {
@@ -170,9 +172,10 @@ our $API = sub {
                 my $arr = $_->first_child('arrival');
 
                 # remove station from arrival and departure and move it one up
-                $dep->first_child('station')->delete;
-                $arr->first_child('station')->move(last_child => $_);
-
+                if($intervias =~ m/^true$/) {
+                    $dep->first_child('station')->delete;
+                    $arr->first_child('station')->move(last_child => $_);
+                }
                 # get the vehicle information
                 my @n = $_->findnodes('Journey/JourneyAttributeList/JourneyAttribute/Attribute/AttributeVariant/Text');
                 $_->insert_new_elt('last_child',vehicle => $n[0]->text_only) if($n[0]);
