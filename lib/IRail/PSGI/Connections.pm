@@ -109,12 +109,14 @@ our $API = sub {
                 # extract and compose the vehicle IDs
                 my $silly_xpath = sub { 'vias/via/Journey/JourneyAttributeList/JourneyAttribute/Attribute[@type="'.shift.'"]/AttributeVariant/Text' };
                 my @vehicles = map { $_->text_only } ($_->get_xpath($silly_xpath->("NAME")));
+
                 $_->first_child('departure')->insert_new_elt('first_child', vehicle => $vehicles[0]);
                 $_->first_child('arrival')->insert_new_elt('first_child', vehicle => $vehicles[$#vehicles]);
 
                 # add the direction to the main connection and vias
                 my @directions = map { s/\s*\[[^]]+\]$//; $_ } map { $_->text_only } ($_->get_xpath($silly_xpath->("DIRECTION")));
                 $_->insert_new_elt('first_child', 'direction' => { stationid => get_station_sid($directions[0]) }, $directions[0] ) if($directions[0]);
+
 
                 # delete the cruft
                 map { $_->delete } $_->get_xpath('//vias/via/Journey');
@@ -124,9 +126,9 @@ our $API = sub {
                 $_->set_att(url => $context[0]->att('url')) and $context[0]->delete if $context[0];
 
 
-                # magle the vias: f([x1,y1],[x2,y2],...[xn,yn]) -> [y1,x2], [y2,x3], ..., [yn-1,xn], [delete];
+                my @via = $_->get_xpath('vias/via');
                 if($intervias =~ m/^true$/) {
-                    my @via = $_->get_xpath('vias/via');
+                    # magle the vias: f([x1,y1],[x2,y2],...[xn,yn]) -> [y1,x2], [y2,x3], ..., [yn-1,xn], [delete];
                     $via[0]->first_child('departure')->delete;
                     # this is an unnatural but wanted off-by-one. 
                     for(0 .. $#via - 1 ) { 
@@ -136,6 +138,14 @@ our $API = sub {
                         $via[$_]->insert_new_elt('last_child', direction => { stationid => get_station_sid($directions[$_+1]) },$directions[$_+1]) if($directions[$_+1]);
                     } 
                     $via[$#via]->delete;
+                } else {
+                    # add the direction and timebetween when intervias is false
+                    for(0 .. $#via) { 
+                        $via[$_]->insert_new_elt('last_child', direction => { stationid => get_station_sid($directions[$_]) },$directions[$_]) if($directions[$_]);
+                        next unless $_ < $#via;
+                        $via[$_]->insert_new_elt('last_child', timeBetween => 
+                            $via[$_+1]->first_child('departure')->first_child('time')->text_only - $via[$_]->first_child('arrival')->first_child('time')->text_only);
+                    } 
                 }
             },
 
