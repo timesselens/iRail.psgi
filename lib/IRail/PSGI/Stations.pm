@@ -61,8 +61,6 @@ unless (scalar %stationlist) { read_csv_files() }
 
 # exported functions ##########################################################################
 sub search_station {
-}
-sub search_station_re {
     my ($name) = @_; $name =~ s/^\s*|\s*$//g; 
     my ($stationidre) = grep { $name =~ $_ } (keys %IRail::PSGI::Stations::searchlist);
     return $stationidre;
@@ -79,7 +77,7 @@ sub get_station_id {
 sub get_station_sid {
     my $name = shift; 
     (my $compact = lc $name) =~ s/\W//gio;
-    return $searchlist_l1{$compact}{id} if exists $searchlist_l1{$compact};
+    return $searchlist_l1{$compact}{stationid} if exists $searchlist_l1{$compact};
     my $stationidre = search_station($name);
     return $searchlist{$stationidre}{stationid} if $stationidre && exists $searchlist{$stationidre};
 }

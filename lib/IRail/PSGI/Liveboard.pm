@@ -35,6 +35,7 @@ our $API = sub {
     my ($lang) = (($param->{lang} || 'nl') =~ m/^(fr|de|en|nl)$/io);
     my ($time) = (($param->{'time'} || time2str('%H%M',time)) =~ m/^(\d+\W?\d+)$/io); # hh-mm
     my ($sid) = get_station_sid($station);
+    warn '($sid): %o %o', $station, $sid;
     my ($format) = ($param->{format} || 'xml' =~ m/^(xml|json|jsonp)$/io);
     my ($timesel) = map { /^a/ && 'A' or /^d/ && 'D' } (($param->{timesel} || 'a') =~ m/^(a(?:rrive)?|d(?:epart)?)/io); # a(rrive) or d(epart)
 
@@ -62,7 +63,7 @@ our $API = sub {
         if ( $line =~ m#(\d+):(\d+)</a>#)                           { $train{epoch} = $epoch + (3600 * $1) + (60 * $2); 
                                                                       $train{departs} = time2str("%Y-%m-%dT%H:%M:%SZ",$train{epoch},"ZULU"); }
         if ( $line =~ m#&nbsp;([\w'][^>]+?)&nbsp;#)                 { $train{station} = decode('iso-latin-1',decode_entities($1)); 
-                                                                      $train{stationid} = get_station_id($train{station}) || 'NULL' };
+                                                                      $train{stationid} = get_station_sid($train{station}) || 'NULL' };
         if ( $line =~ m#&tid=(\d+)#)                                { $train{tid} = $1 };
         if ( $line =~ m#<font color="DarkGray">#)                   { $train{left} = 1 };
         if ( $line =~ m#<font color="Red">\s*\+(\d+)'\s*</font>#)   { $train{delay} = int($1 * 60) };
