@@ -97,7 +97,7 @@ our $API = sub {
         twig_handlers => {
             'ResC' => sub { 
                 $_->set_tag('connections'); 
-                $_->set_att('timestamp' => time); 
+                $_->set_att('timestamp' => time, version => $VERSION ); 
                 $_->del_att(qw/prod xsi:noNamespaceSchemaLocation ver/); 
             },
 
