@@ -29,13 +29,13 @@ our $API = sub {
     my $param = $req->parameters();
 
     my ($station) = (($param->{station} || '') =~ m/^([\w\'\-\ ]+)$/io);
+    my ($id) = (($param->{id} || '') =~ m/^[\w\.\d]+$/io); 
 
-    croak "station not defined" unless $station;
+    croak "either station or id must be defined" unless ($station || $id);
 
     my ($lang) = (($param->{lang} || 'nl') =~ m/^(fr|de|en|nl)$/io);
     my ($time) = (($param->{'time'} || time2str('%H%M',time)) =~ m/^(\d+\W?\d+)$/io); # hh-mm
-    my ($sid) = get_station_sid($station);
-    warn '($sid): %o %o', $station, $sid;
+    my ($sid) = (get_station_sid($param->{id}) || get_station_sid($station));
     my ($format) = ($param->{format} || 'xml' =~ m/^(xml|json|jsonp)$/io);
     my ($timesel) = map { /^a/ && 'A' or /^d/ && 'D' } (($param->{timesel} || 'a') =~ m/^(a(?:rrive)?|d(?:epart)?)/io); # a(rrive) or d(epart)
 

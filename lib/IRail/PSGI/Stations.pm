@@ -78,6 +78,7 @@ sub get_station_sid {
     my $name = shift; 
     (my $compact = lc $name) =~ s/\W//gio;
     return $searchlist_l1{$compact}{stationid} if exists $searchlist_l1{$compact};
+    return $stationlist{$name}{stationid} if exists $stationlist{$name}; #when $name is BE.NBMS.\d
     my $stationidre = search_station($name);
     return $searchlist{$stationidre}{stationid} if $stationidre && exists $searchlist{$stationidre};
 }
