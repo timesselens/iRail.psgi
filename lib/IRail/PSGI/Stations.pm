@@ -5,6 +5,7 @@ use Plack::Request;
 use WebHive::Log;
 use List::Util qw/max/;
 use JSON::XS;
+use Google::ProtocolBuffers;
 use Encode;
 use encoding 'utf-8';
 use parent 'Exporter';
@@ -49,7 +50,9 @@ sub read_csv_files {
             (my $compact = lc $name) =~ s/\W//gio;
             $searchlist_l1{$compact} = { lang => $lang, id => $id, stationid => $stationid };
             $searchlist{$re} = { lang => $lang, id => $id, stationid => $stationid } if $re;
-            $stationlist{$id} = { id => $id, name => $name, re => $re, lang => $lang, lat => $lat, long => $long, stationid => $stationid };
+            $stationlist{$id} ||= { id => $id, lat => $lat, long => $long, stationid => $stationid };
+            $stationlist{$id}{name}{$lang || 'default'} = $name;
+            push @{$stationlist{$id}{re}}, $re;
         }
         close $fh;
     }
@@ -98,7 +101,7 @@ our $API = sub {
           '<?xml version="1.0" encoding="UTF-8"?>',
           '<stations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="stations.xsd" version="1.0" timestamp="'.$timestamp.'">',
             (map { '<station id="'.$_->{id}.'" location="'.$_->{lat}.' '.$_->{long}.'" locationY="'.$_->{lat}.'" locationX="'.$_->{long}.'">'. $_->{name}.'</station>' }
-             grep { if($lang =~ m/^\w{2}$/) { $_->{lang} =~ m/$lang/i } else {1}; }
+             grep { if(defined $_->{lang} && $lang =~ m/^\w{2}$/) { $_->{lang} =~ m/$lang/i } 1 } 
              sort { $a->{name} cmp $b->{name} } 
              values (%stationlist)),
           '</stations>',
@@ -106,14 +109,44 @@ our $API = sub {
     
         return [ 200, [ 'Content-Type' => 'text/xml' ], [ $xml{$lang} ] ];
 
+    } elsif ($format =~ m/protobuf/) {
+
+        Google::ProtocolBuffers->parse(qq#
+                message Stations {
+                  required string version  = 1;
+                  required int32 timestamp = 2; // epoch timestamp
+                  repeated Station list = 3 [packed=true];
+
+
+                  message Station {
+                    required string id = 1;
+                    required string name = 2;
+                    optional float long = 3;
+                    optional float lat = 4;
+                    repeated StationName names = 5 [packed=true];
+
+                    message StationName {
+                        required string name = 1;
+                        required string lang = 2;
+                    }
+
+                  }
+        
+               }
+        #, {create_accessors => 1 });
+
+        my $buf = Stations->encode({ timestamp => $timestamp, version => "1.0", list => [values %stationlist]});
+
+        return  [ 200, [ 'Content-Type' => 'application/octet-stream' ], [ $buf ] ];
+
     } elsif ($format =~ m/json$/i) {
 
         $json{$lang} ||= encode('UTF-8',encode_json { station => [ map { { id => $_->{id}, 
                                                                            name => $_->{name}, 
                                                                            locationX => $_->{long}, 
                                                                            locationY => $_->{lat}  } } 
+             grep { if(defined $_->{lang} && $lang =~ m/^\w{2}$/) { $_->{lang} =~ m/$lang/i } 1 } 
                                                                    sort { $a->{name} cmp $b->{name} } 
-                                                                   grep { if($lang =~ m/^\w{2}$/) { $_->{lang} =~ m/$lang/i } else {1}; }
                                                                    values %stationlist ] });
 
         return  [ 200, [ 'Content-Type' => 'application/json; charset=UTF-8' ], [ $json{$lang} ] ];
@@ -126,6 +159,7 @@ our $API = sub {
                                                                            name => $_->{name}, 
                                                                            locationX => $_->{long}, 
                                                                            locationY => $_->{lat}  } } 
+             grep { if(defined $_->{lang} && $lang =~ m/^\w{2}$/) { $_->{lang} =~ m/$lang/i } 1 } 
                                                                    sort { $a->{name} cmp $b->{name} } 
                                                                    values %stationlist ] });
 
