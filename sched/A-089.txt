@@ -1,0 +1,554 @@
+                                                    A   Denderleeuw
+
+                                                    Y   Welle
+
+                                                    Y   Haaltert
+
+                                                    Y   Ede
+
+                                                    Y
+                                                                                              Lijn 89
+                                                        Burst
+
+                                                    Y   Terhagen
+
+                                                    Y   Herzele
+
+                                                    Y   Hillegem
+
+                                                    Y   Zottegem
+
+                                                    Y   Munkzwalm
+
+                                                    Y   Sint-Denijs-Boekel
+
+                                                    Y
+L89.fm Page 1 Wednesday, December 8, 2010 9:35 AM
+
+
+
+
+                                                        Oudenaarde
+
+                                                    Y   Anzegem
+
+                                                    Y   Vichte
+
+                                                    C   Kortrijk
+                                                                             Dienstregelingen geldig vanaf 12.12.2010
+
+
+
+
+                                                                                                                1
+ L89.fm Page 2 Wednesday, December 8, 2010 9:35 AM
+
+
+
+
+Beste klant,
+
+Hierbij enkele woordjes uitleg voor
+een vlot gebruik van deze lijnfolder.
+
+Op de netkaart hieronder vindt u
+de 54 spoorlijnen van de NMBS,
+met hun refertenummer.
+
+Voor elke lijn bestaat een folder
+met de dienstregeling van alle
+treinen op die lijn.
+
+Als uw traject meer dan één lijn
+omvat, dient u de dienstregeling in
+elke betrokken folder te raadplegen.
+
+Daarom zijn de refertenummers van
+elke spoorlijn in de folders heel nuttig voor u: zo
+kan u uw traject volledig samenstellen.
+
+Bijvoorbeeld:
+u wil van Diest naar Brussel-Zuid. Dan vindt u alle info
+over de dienstregeling in de lijnfolders 35 en 36.
+
+Voor meer info, surf naar www.nmbs.be en raadpleeg de dienstregelingen
+die voortdurend worden geactualiseerd. U kunt er ook uw persoonlijke
+dienstregelingsbrochure samenstellen dankzij de applicatie
+"Persoonlijke dienstregelingsbrochure".
+
+Goede reis !
+
+
+Ir. Sabin S'heeren                                                       Ref: 10031.cdr (3/3)
+Directeur-Generaal NMBS Mobility
+                                                                                   Conventionele tekens
+                                                     $    Rijdt tijdens de jaarlijkse vakantieperiode
+                                                                              27.XII.10     31.XII.10 - 03.VI.11 - 04.VII.11     19.VIII.11 - 31.X.11
+                                                     )    Rijdt niet tijdens de jaarlijkse vakantieperiode
+                                                     *    Rijdt tijdens de toeristische periode
+                                                                                                                               25.VI.11     28.VIII.11
+                                                     ;    Rijdt niet tijdens de toeristische periode
+                                                     L    Rijdt tijdens de schoolvakantie
+                                                                   27.XII.10     07.I.11 - 07.III.11    11.III.11 - 11.IV.11     22.IV.11 - 03.VI.11 -
+                                                                                                       01.VII.11     31.VIII.11 - 31.X.11    04.XI.11
+                                                     °    Rijdt niet tijdens de schoolvakantie
+                                                     A    Niet op zaterdagen, zon- en feestdagen
+                                                     C    Op zaterdagen, zon- en feestdagen
+                                                    1…7 Maandag … Zondag
+                                                     k  Op zon- en feestdagen
+                                                     h    Niet op zon- en feestdagen
+                                                     6    Rijdt tijdens de openingsuren van Walibi
+                                                                                                   3 11.IV.11       22.IV.11 - 08.VI.11      13.VI.11
+                                                                                                  3 15.VI.11       31.VIII.11 - 31.X.11      04.XI.11
+                                                                                                                                           5 29.IV.11
+                                                                                                                           45 19.V.11        03.VI.11
+                                                                                                                            C 09.IV.11       06.XI.11
+                                                     7    Rijdt tijdens de openingsuren van Walibi
+                                                                                                                               09.VII.11    31.VIII.11
+                                                     8    Rijdt tijdens de openingsuren van Walibi
+                                                                                                                           6 16.VII.11      13.VIII.11
+                                                     E    Aankomstuur van de trein
+                                                     r    Reservatie verplicht
+
+                                                          Intercitytreinen
+                                                          Interregiotreinen
+                                                     {    CityRail
+                                                          Stoptreinen
+L89.fm Page 3 Wednesday, December 8, 2010 9:35 AM
+
+
+
+
+                                                      .   Piekuurtreinen
+                                                     ^    Toeristentreinen
+                                                     Ü    Thalys-treinen
+                                                     à    ICE-treinen
+                                                     o    EuroCity-treinen
+                                                     ¨    Opgelet, Diabolotoeslag van toepassing voor deze bestemming.
+                                                                                Feestdagen gelijkgesteld met een zondag
+                                                               25.IV.11 - 02.VI.11 - 13.VI.11 - 21.VII.11 - 15.VIII.11 - 01.XI.11 - 11.XI.11
+                                                                               Feestdagen gelijkgesteld met een zaterdag
+                                                                                            25.XII.10 - 01.I.11
+
+
+                                                                                                                                                   3
+                                                    Toestand op 30.09.2010
+L89.fm Page 4 Wednesday, December 8, 2010 9:35 AM
+
+
+
+
+                                                                          Denderleeuw - Kortrijk
+                                              =      {       L        =      {      L       =     {       >      >     L       =     {      L        =     {
+                                             655     2275    2327    1676   2276    2328   1677   2277   7958   7969   2329   1678   2278   2330    1679   2279
+     Km    L.                                                                                             î      í
+                 Herkomst                                   Dender
+                                                            monde
+                                                             4.55
+          59    Sint-Niklaas                                                        5.27                               6.29                  7.29
+          50    Brus.-Noord                                   5.28           5.52   6.32          6.52                 7.32          7.53    8.32          8.52
+          50    Brus.-Centraal                                5.32           5.56   6.36          6.56                 7.36          7.57    8.36          8.56
+          50    Brus.-Zuid                                    5.36           6.02   6.41          7.02                 7.41          8.02    8.41          9.02
+      0      A Denderleeuw                           5.27                    6.27   7.01          7.25          7.42                 8.27    9.01          9.27
+      3      Y Welle                                 5.30      ñ             6.30    ñ            7.28          7.46    ñ            8.30     ñ            9.30
+      5      Y Haaltert                              5.33      ñ             6.33    ñ            7.31          7.49    ñ            8.33     ñ            9.33
+      7      Y Ede                                   5.36      ñ             6.36    ñ            7.34          7.53    ñ            8.36     ñ            9.36
+     12      Y Burst                    O            5.40     6.01           6.40    ñ            7.38          7.58    ñ            8.40     ñ            9.40
+     12      Y Burst                                 5.41     6.02           6.41    ñ            7.39          7.59    ñ            8.41     ñ            9.41
+     14      Y Terhagen                              5.44      ñ             6.44    ñ            7.42          8.02    ñ            8.44     ñ            9.44
+     15      Y Herzele                               5.46      ñ             6.46    ñ            7.44          8.04    ñ            8.46     ñ            9.46
+     17      Y Hillegem                              5.49      ñ             6.49    ñ            7.47          8.07    ñ            8.49     ñ            9.49
+     21      Y Zottegem                 O            5.53     6.08           6.53   7.14          7.51          8.11   8.14          8.53    9.14          9.53
+     21      Y Zottegem                                       6.09                  7.16   7.19          7.56          8.16   8.19           9.16   9.19
+     28      Y Munkzwalm                                      6.15                   ñ     7.25          8.03           ñ     8.25            ñ     9.25
+     31      Y Sint-Denijs-Boekel                             6.18                   ñ     7.28          8.06           ñ     8.28            ñ     9.28
+     38      Y Oudenaarde               O                     6.24                  7.27   7.34          8.12          8.27   8.34           9.27   9.34
+     38      Y Oudenaarde                     4.35            6.25   6.32           7.28   7.35          8.14          8.28   8.35           9.28   9.35
+     46      Y Anzegem                        4.42            6.32   6.39            ñ     7.41          8.21           ñ     8.41            ñ     9.41
+     54      Y Vichte                         4.48             ñ     6.45            ñ     7.47          8.27           ñ     8.47            ñ     9.47
+     63      C Kortrijk                 O     4.55            6.43   6.52           7.45   7.55          8.34          8.45   8.55           9.45   9.55
+          69    Poperinge               O                     7.23                  8.28                                                    10.28
+               Bestemmingming               Brugge
+                                             5.51
+L89.fm Page 5 Wednesday, December 8, 2010 9:35 AM
+
+
+
+
+                                                                         Denderleeuw - Kortrijk
+                                        L        =      {        L        =      {        L        =      {         >      L        =      {        L        =      {        L
+                                        2331    1680    2280     2332    1681    2281     2333    1682    2282    7978     2334    1683    2283     2335    1684    2284     2336
+      L.
+           Herkomst                    Dender                   Dender                   Dender                   Aalst   Dender                   Dender                   Dender
+                                       monde                    monde                    monde                    12.38   monde                    monde                    monde
+                                        9.07                    10.07                    11.07                            12.07                    13.07                    14.07
+     59    Sint-Niklaas
+     50    Brus.-Noord                   9.32            9.52    10.32           10.52    11.32           11.52            12.32           12.52    13.32           13.52    14.32
+     50    Brus.-Centraal                9.36            9.56    10.36           10.56    11.36           11.56            12.36           12.56    13.36           13.56    14.36
+     50    Brus.-Zuid                    9.41           10.02    10.41           11.02    11.41           12.02            12.41           13.02    13.41           14.02    14.41
+        A Denderleeuw                   10.01           10.27    11.01           11.27    12.01           12.27            13.01           13.27    14.01           14.27    15.01
+        Y Welle                           ñ             10.30      ñ             11.30      ñ             12.30              ñ             13.30      ñ             14.30      ñ
+        Y Haaltert                        ñ             10.33      ñ             11.33      ñ             12.33              ñ             13.33      ñ             14.33      ñ
+        Y Ede                             ñ             10.36      ñ             11.36      ñ             12.36              ñ             13.36      ñ             14.36      ñ
+        Y Burst                    O      ñ             10.40      ñ             11.40      ñ             12.40              ñ             13.40      ñ             14.40      ñ
+        Y Burst                           ñ             10.41      ñ             11.41      ñ             12.41   12.56      ñ             13.41      ñ             14.41      ñ
+        Y Terhagen                        ñ             10.44      ñ             11.44      ñ             12.44   12.59      ñ             13.44      ñ             14.44      ñ
+        Y Herzele                         ñ             10.46      ñ             11.46      ñ             12.46   13.01      ñ             13.46      ñ             14.46      ñ
+        Y Hillegem                        ñ             10.49      ñ             11.49      ñ             12.49   13.04      ñ             13.49      ñ             14.49      ñ
+        Y Zottegem                 O    10.14           10.53    11.14           11.53    12.14           12.53   13.08    13.14           13.53    14.14           14.53    15.14
+        Y Zottegem                      10.16   10.19            11.16   11.19            12.16   12.19                    13.16   13.19            14.16   14.19            15.16
+        Y Munkzwalm                       ñ     10.25              ñ     11.25              ñ     12.25                      ñ     13.25              ñ     14.25              ñ
+        Y Sint-Denijs-Boekel              ñ     10.28              ñ     11.28              ñ     12.28                      ñ     13.28              ñ     14.28              ñ
+        Y Oudenaarde               O    10.27   10.34            11.27   11.34            12.27   12.34                    13.27   13.34            14.27   14.34            15.27
+        Y Oudenaarde                    10.28   10.35            11.28   11.35            12.28   12.35                    13.28   13.35            14.28   14.35            15.28
+        Y Anzegem                         ñ     10.41              ñ     11.41              ñ     12.41                      ñ     13.41              ñ     14.41              ñ
+        Y Vichte                          ñ     10.47              ñ     11.47              ñ     12.47                      ñ     13.47              ñ     14.47              ñ
+        C Kortrijk                 O    10.45   10.55            11.45   11.55            12.45   12.55                    13.45   13.55            14.45   14.55            15.45
+     69    Poperinge               O                             12.28                    13.29                            14.28                    15.28                    16.28
+          Bestemmingming
+L89.fm Page 6 Wednesday, December 8, 2010 9:35 AM
+
+
+
+
+                                                                        Denderleeuw - Kortrijk
+                                        =      {        L        >       =      {         >        >        >        >       L        =       >        >        >      {         >
+                                       1685    2285     2337    8966    1686    2286     8901     8901     8902     8903     2338    1687    8969     8904     8905    2287     8906
+      L.                                                         í                        í         ì        í
+           Herkomst                                    Dender                           Schaar   Schaar   Schaar   Schaar   Dender                   Schaar   Schaar           Schaar
+                                                       monde                             beek     beek     beek     beek    monde                     beek     beek             beek
+                                                       15.07                            15.53    15.53    16.02    16.09    16.07                    16.35    16.53            17.09
+     59    Sint-Niklaas
+     50    Brus.-Noord                         14.52    15.32   15.36           15.52   15.59    15.59    16.08    16.14     16.32           16.22   16.41    16.59    16.51   17.14
+     50    Brus.-Centraal                      14.56    15.36     ñ             15.56   16.03    16.03    16.12    16.18     16.36             ñ     16.45    17.03    16.55   17.18
+     50    Brus.-Zuid                          15.02    15.41     ñ             16.01   16.08    16.08    16.17    16.23     16.41             ñ     16.50    17.08    17.02   17.23
+        A Denderleeuw                          15.27    16.01   16.04           16.24   16.30    16.30    16.38    16.45     17.01           17.06   17.12       ñ     17.29   17.42
+        Y Welle                                15.30      ñ     16.08           16.27      ñ        ñ        ñ        ñ        ñ             17.10      ñ        ñ     17.32      ñ
+        Y Haaltert                             15.33      ñ     16.11           16.30   16.36    16.36       ñ     16.51       ñ             17.13   17.18       ñ     17.35   17.49
+        Y Ede                                  15.36      ñ     16.15           16.33      ñ     16.40    16.46    16.55       ñ             17.16   17.22       ñ     17.38   17.54
+        Y Burst                    O           15.40      ñ     16.19           16.37   16.43    16.44       ñ     17.00       ñ             17.20   17.27       ñ     17.42   17.58
+        Y Burst                                15.41      ñ     16.20           16.38   16.44    16.45       ñ     17.01       ñ             17.21   17.28       ñ     17.43   17.59
+        Y Terhagen                             15.44      ñ     16.23           16.41      ñ        ñ        ñ        ñ        ñ             17.24      ñ        ñ     17.46      ñ
+        Y Herzele                              15.46      ñ     16.25           16.43      ñ     16.49    16.54    17.05       ñ             17.26   17.32       ñ     17.48   18.03
+        Y Hillegem                             15.49      ñ     16.28           16.46      ñ        ñ        ñ        ñ        ñ             17.29      ñ        ñ     17.51      ñ
+        Y Zottegem                 O           15.53    16.14   16.32           16.50   16.53    16.54    16.59    17.10     17.14           17.33   17.37    17.41    17.55   18.09
+        Y Zottegem                     15.19            16.16           16.19           16.55    16.56    17.02    17.12     17.16   17.22           17.39    17.45            18.11
+        Y Munkzwalm                    15.25              ñ             16.25              ñ     17.02    17.08       ñ        ñ     17.28              ñ     17.52               ñ
+        Y Sint-Denijs-Boekel           15.28              ñ             16.28              ñ     17.05    17.12       ñ        ñ     17.31              ñ     17.56               ñ
+        Y Oudenaarde               O   15.34            16.27           16.34           17.06    17.11    17.18    17.23     17.27   17.37           17.52    18.02            18.23
+        Y Oudenaarde                   15.35            16.28           16.35           17.08    17.12                       17.28   17.38                    18.04
+        Y Anzegem                      15.41              ñ             16.41           17.16    17.19                         ñ     17.44                    18.12
+        Y Vichte                       15.47              ñ             16.47           17.22    17.25                         ñ     17.50                    18.18
+        C Kortrijk                 O   15.55            16.45           16.55           17.30    17.33                       17.45   17.58                    18.26
+     69    Poperinge               O                    17.28                                                                18.30
+          Bestemmingming
+L89.fm Page 7 Wednesday, December 8, 2010 9:35 AM
+
+
+
+
+                                                                          Denderleeuw - Kortrijk
+                                        L        =        >      {        >       L        =      {        L        =      {        L        =      {        L       {        L       {
+                                        2339    1688     8907    2288    8908     2340    1689    2289     2341    1690    2290     2342    1691    2291     2343    2292     2344    2293
+      L.                                                                  í
+           Herkomst                    Dender           Schaar                   Dender                   Dender                   Dender                   Dender           Dender
+                                       monde             beek                    monde                    monde                    monde                    monde            monde
+                                       17.07            17.35                    18.07                    19.07                    20.07                    21.07            22.05
+     59    Sint-Niklaas
+     50    Brus.-Noord                  17.32            17.41   17.52   18.07    18.32           18.52    19.32           19.52    20.32           20.52    21.32   21.52    22.32
+     50    Brus.-Centraal               17.36            17.45   17.56   18.11    18.36           18.56    19.36           19.56    20.36           20.56    21.36   21.56    22.36
+     50    Brus.-Zuid                   17.41            17.50   18.02   18.17    18.41           19.02    19.41           20.02    20.41           21.02    21.41   22.17    22.41
+        A Denderleeuw                   18.01            18.11   18.27   18.39    19.01           19.27    20.01           20.27    21.01           21.27    22.01   22.36    23.00   23.58
+        Y Welle                           ñ                ñ     18.30     ñ        ñ             19.30      ñ             20.30      ñ             21.30      ñ     22.39      ñ      0.01
+        Y Haaltert                        ñ              18.16   18.33   18.44      ñ             19.33      ñ             20.33      ñ             21.33      ñ     22.42    23.04    0.04
+        Y Ede                             ñ              18.20   18.36   18.47      ñ             19.36      ñ             20.36      ñ             21.36      ñ     22.45      ñ      0.07
+        Y Burst                    O      ñ              18.24   18.40   18.52      ñ             19.40      ñ             20.40      ñ             21.40      ñ     22.49    23.10    0.11
+        Y Burst                           ñ              18.25   18.41   18.52      ñ             19.41      ñ             20.41      ñ             21.41      ñ     22.49    23.11    0.11
+        Y Terhagen                        ñ                ñ     18.44     ñ        ñ             19.44      ñ             20.44      ñ             21.44      ñ     22.53      ñ      0.14
+        Y Herzele                         ñ              18.29   18.46   18.56      ñ             19.46      ñ             20.46      ñ             21.46      ñ     22.55    23.14    0.16
+        Y Hillegem                        ñ                ñ     18.49     ñ        ñ             19.49      ñ             20.49      ñ             21.49      ñ     22.58      ñ      0.19
+        Y Zottegem                 O    18.14            18.34   18.53   19.01    19.14           19.53    20.14           20.53    21.14           21.53    22.14   23.02    23.19    0.23
+        Y Zottegem                      18.16   18.20                    19.02    19.16   19.19            20.16   20.19            21.16   21.19            22.16   23.03    23.20    0.24
+        Y Munkzwalm                       ñ     18.26                    19.08      ñ     19.25              ñ     20.25              ñ     21.25              ñ     23.09    23.26    0.30
+        Y Sint-Denijs-Boekel              ñ     18.29                    19.12      ñ     19.28              ñ     20.28              ñ     21.28              ñ     23.12      ñ      0.33
+        Y Oudenaarde               O    18.27   18.35                    19.18    19.27   19.34            20.27   20.34            21.27   21.34            22.27   23.18    23.33    0.39
+        Y Oudenaarde                    18.28   18.36                             19.28   19.35            20.28   20.35            21.28   21.35            22.28            23.34
+        Y Anzegem                         ñ     18.42                               ñ     19.41              ñ     20.41              ñ     21.41              ñ                ñ
+        Y Vichte                          ñ     18.48                               ñ     19.47              ñ     20.47              ñ     21.47              ñ                ñ
+        C Kortrijk                 O    18.46   18.56                             19.45   19.55            20.45   20.55            21.45   21.55            22.45            23.49
+     69    Poperinge               O    19.30                                     20.28                    21.28                    22.28                    23.28
+          Bestemmingming
+L89.fm Page 8 Wednesday, December 8, 2010 9:35 AM
+
+
+
+
+                                                                                         Kortrijk - Denderleeuw
+                                                      {          >       {          >       L          >       {          >         >       L          >         >        >        {          >        >
+                                                     2254      7965      2255     7901      2304     7902      2256      7967     7903      2305      7904     7904      7905     2257      7906      7907
+     Km     L.                                                                                                                                         í        ì         í
+                   Herkomst                                                                                                                Roese-
+                                                                                                                                            lare
+                                                                                                                                            5.45
+            69      Poperinge                                                                4.31
+      0          A Kortrijk                                                                  5.15      5.22                                  6.15                                            6.39
+      9          Y Vichte                                                                     ñ        5.31                                   ñ                                              6.47
+     17          Y Anzegem                                                                   5.26      5.37                                   ñ                                              6.54
+     25          Y Oudenaarde                    O                                           5.32      5.44                                  6.32                                            7.01
+     25          Y Oudenaarde                         3.56      4.22      4.49     5.19      5.33      5.45                        6.09      6.33               6.36      6.39               7.02      7.12
+     32          Y Sint-Denijs-Boekel                 4.02      4.28      4.55     5.26       ñ         ñ                          6.17       ñ                 6.43      6.46               7.08       ñ
+     35          Y Munkzwalm                          4.05      4.31      4.58     5.29       ñ        5.53                        6.21       ñ                 6.47      6.50               7.12       ñ
+     42          Y Zottegem                      O    4.11      4.37      5.04     5.35      5.44      5.59                        6.27      6.44               6.53      6.56               7.18      7.24
+     42          Y Zottegem                           4.12      4.37      5.05     5.37      5.45      6.01     6.05    6.23       6.29      6.46      6.54     6.55      6.58     7.05      7.20      7.26
+     46          Y Hillegem                           4.16      4.41      5.09       ñ        ñ         ñ       6.09     ñ           ñ        ñ         ñ        ñ         ñ       7.09       ñ         ñ
+     48          Y Herzele                            4.19      4.44      5.12     5.42       ñ        6.07     6.12    6.29       6.35       ñ         ñ       7.01      7.04     7.12       ñ        7.32
+     49          Y Terhagen                           4.21      4.46      5.14       ñ        ñ         ñ       6.14     ñ           ñ        ñ         ñ        ñ         ñ       7.14       ñ         ñ
+     51          Y Burst                         O    4.24      4.49      5.17       ñ       5.51      6.11     6.17    6.32       6.38       ñ        7.01     7.04      7.07     7.17       ñ        7.36
+     51          Y Burst                              4.25      4.49      5.18       ñ       5.52      6.12     6.18    6.33       6.39       ñ        7.02     7.05      7.08     7.18       ñ        7.37
+     56          Y Ede                                4.29      4.54      5.22     5.49       ñ        6.17     6.22    6.37         ñ        ñ        7.08     7.11      7.14     7.22       ñ         ñ
+     58          Y Haaltert                           4.32      4.57      5.25     5.52       ñ        6.21     6.25    6.40         ñ        ñ        7.12     7.15       ñ       7.25       ñ        7.44
+     60          Y Welle                              4.35      5.00      5.28       ñ        ñ         ñ       6.28     ñ           ñ        ñ         ñ        ñ         ñ       7.28       ñ         ñ
+     63          C Denderleeuw                   O    4.38      5.03      5.31     5.57      6.00      6.26     6.31    6.45       6.48      6.59      7.17     7.20      7.20     7.31       ñ        7.49
+            50      Brus.-Zuid                   O    4.58                5.58     6.24      6.19      6.49     6.58 ! 7.45        7.10      7.19      7.37     7.43      7.43     7.58      7.55      8.13
+            50      Brus.-Centraal               O    5.05                6.05     6.31      6.24      6.54     7.05               7.17      7.24      7.42     7.48      7.48     8.05      8.02      8.18
+            50      Brus.-Noord                  O    5.09                6.09     6.35      6.28      6.58     7.09               7.21      7.28      7.46     7.52      7.52     8.09      8.06      8.22
+            59      Sint-Niklaas                 O
+                   Bestemmingming                    Aalst                                 Lokeren Schaar                 í      Schaar   Dender    Schaar    Schaar   Schaar              Schaar   Schaar
+                                                     5.53                                   7.16    beek               via L50    beek    monde      beek      beek     beek                beek     beek
+                                                                                                    7.04                          7.28     7.53      7.52      7.58     7.58                8.13     8.30
+    ! í Rijdt verder als P-trein 7967 vIA l50: Denderleeuw 6.59 - Liedekerke 7.03 - Essene-Lombeek 7.06 - Ternat 7.10/7.11 - Sint-Martens-Bodegem 7.15 - Dilbeek 7.18/7.19 - Groot-Bijgaarden 7.22 - Sint-Agatha-
+      Berchem 7.24/7.25 - Jette 7.28/7.29 - Bockstael 7.31 - Brus.-Noord 7.35/7.38 - Brus.-Centraal 7.41/7.42 - Brus.-Zuid 7.45
+L89.fm Page 9 Wednesday, December 8, 2010 9:35 AM
+
+
+
+
+                                                                         Kortrijk - Denderleeuw
+                                        >       =      L         >        >      {        >       =      L       {        =      L       {        =       L       {        =
+                                       7968   1657     2306     7908     7990    2258    7909    1658    2307    2259    1659    2308    2260    1660     2309    2261    1661
+      L.                                                                   í              í
+             Herkomst                                                   Brugge                          Roese
+                                                                         6.42                            lare
+                                                                                                         7.47
+     69       Poperinge                                 6.24                                              7.31                    8.31                     9.31
+           A Kortrijk                          7.04     7.15              7.28            7.33   8.05     8.15           9.05     9.15           10.05    10.15           11.05
+           Y Vichte                            7.12      ñ                 ñ              7.42   8.13      ñ             9.13      ñ             10.13      ñ             11.13
+           Y Anzegem                           7.18      ñ                 ñ              7.48   8.19      ñ             9.19      ñ             10.19      ñ             11.19
+           Y Oudenaarde            O           7.24     7.32              7.44            7.55   8.25     8.32           9.25     9.32           10.25    10.32           11.25
+           Y Oudenaarde                        7.25     7.33              7.45            8.00   8.26     8.33           9.26     9.33           10.26    10.33           11.26
+           Y Sint-Denijs-Boekel                7.31      ñ                7.51            8.07   8.32      ñ             9.32      ñ             10.32      ñ             11.32
+           Y Munkzwalm                         7.34      ñ                7.54            8.10   8.35      ñ             9.35      ñ             10.35      ñ             11.35
+           Y Zottegem              O           7.41     7.44              8.00            8.16   8.41     8.44           9.41     9.44           10.41    10.44           11.41
+           Y Zottegem                  7.33             7.46     7.54            8.03     8.17            8.46    9.05            9.46   10.07            10.46   11.07
+           Y Hillegem                   ñ                ñ        ñ              8.07      ñ               ñ      9.09             ñ     10.11              ñ     11.11
+           Y Herzele                   7.39              ñ       8.00            8.10      ñ               ñ      9.12             ñ     10.14              ñ     11.14
+           Y Terhagen                   ñ                ñ        ñ              8.12      ñ               ñ      9.14             ñ     10.16              ñ     11.16
+           Y Burst                 O   7.43              ñ       8.03            8.15      ñ               ñ      9.17             ñ     10.19              ñ     11.19
+           Y Burst                     7.44              ñ       8.04            8.16      ñ               ñ      9.18             ñ     10.20              ñ     11.20
+           Y Ede                       7.48              ñ       8.09            8.20      ñ               ñ      9.22             ñ     10.24              ñ     11.24
+           Y Haaltert                  7.52              ñ       8.13            8.23      ñ               ñ      9.25             ñ     10.27              ñ     11.27
+           Y Welle                      ñ                ñ        ñ              8.26      ñ               ñ      9.28             ñ     10.30              ñ     11.30
+           C Denderleeuw           O   7.56             7.59     8.17            8.29     8.32            8.59    9.31            9.59   10.33            10.59   11.33
+     50       Brus.-Zuid           O   8.43             8.19     8.40            9.00     8.54            9.19    9.58           10.19   10.58            11.19   11.58
+     50       Brus.-Centraal       O                    8.24     8.46            9.05     8.59            9.24   10.05           10.24   11.05            11.24   12.05
+     50       Brus.-Noord          O                    8.28     8.50            9.09     9.03            9.28   10.09           10.28   11.09            11.28   12.09
+     59       Sint-Niklaas         O
+             Bestemmingming            via            Dender   Schaar                   Schaar          Dender                  Dender                   Dender
+                                       L50            monde     beek                     beek           monde                   monde                    monde
+                                                       8.53     8.56                     9.10            9.53                   10.53                    11.53
+L89.fm Page 10 Wednesday, December 8, 2010 9:35 AM
+
+
+
+
+                                                                         Kortrijk - Denderleeuw
+                                        L       {       {        =       L       {         >      =       L       {        =       L       {        =      L       {        =
+                                        2310    2262    2262    1662     2311    2263    7979    1663     2312    2264    1664     2313    2265    1665    2314    2266    1666
+      L.                                          !      .
+             Herkomst
+
+
+     69       Poperinge                 10.31                            11.30                            12.31
+           A Kortrijk                   11.15                   12.05    12.15                   13.05    13.15           14.05    14.15           15.05   15.15           16.05
+           Y Vichte                       ñ                     12.13      ñ                     13.13      ñ             14.13      ñ             15.13     ñ             16.13
+           Y Anzegem                      ñ                     12.19      ñ                     13.19      ñ             14.19      ñ             15.19     ñ             16.19
+           Y Oudenaarde            O    11.32                   12.25    12.32                   13.25    13.32           14.25    14.32           15.25   15.32           16.25
+           Y Oudenaarde                 11.33                   12.26    12.33                   13.26    13.33           14.26    14.33           15.26   15.33           16.26
+           Y Sint-Denijs-Boekel           ñ                     12.32      ñ                     13.32      ñ             14.32      ñ             15.32     ñ             16.32
+           Y Munkzwalm                    ñ                     12.35      ñ                     13.35      ñ             14.35      ñ             15.35     ñ             16.35
+           Y Zottegem              O    11.44                   12.41    12.44                   13.41    13.44           14.41    14.44           15.41   15.44           16.41
+           Y Zottegem                   11.46   12.07   12.12            12.46   13.07   13.22            13.46   14.07            14.46   15.07           15.46   16.07
+           Y Hillegem                     ñ     12.11   12.16              ñ     13.11   13.26              ñ     14.11              ñ     15.11             ñ     16.11
+           Y Herzele                      ñ     12.14   12.19              ñ     13.14   13.29              ñ     14.14              ñ     15.14             ñ     16.14
+           Y Terhagen                     ñ     12.16   12.21              ñ     13.16   13.31              ñ     14.16              ñ     15.16             ñ     16.16
+           Y Burst                 O      ñ     12.19   12.24              ñ     13.19   13.34              ñ     14.19              ñ     15.19             ñ     16.19
+           Y Burst                        ñ     12.20   12.25              ñ     13.20                      ñ     14.20              ñ     15.20             ñ     16.20
+           Y Ede                          ñ     12.24   12.29              ñ     13.24                      ñ     14.24              ñ     15.24             ñ     16.24
+           Y Haaltert                     ñ     12.27   12.32              ñ     13.27                      ñ     14.27              ñ     15.27             ñ     16.27
+           Y Welle                        ñ     12.30   12.35              ñ     13.30                      ñ     14.30              ñ     15.30             ñ     16.30
+           C Denderleeuw           O    11.59   12.33   12.38            12.59   13.33                    13.59   14.33            14.59   15.33           15.59   16.33
+     50       Brus.-Zuid           O    12.19   13.00   13.00            13.19   13.58                    14.19   14.58            15.19   15.58           16.19   16.58
+     50       Brus.-Centraal       O    12.24   13.05   13.05            13.24   14.05                    14.24   15.04            15.24   16.03           16.24   17.05
+     50       Brus.-Noord          O    12.28   13.09   13.09            13.28   14.09                    14.28   15.08            15.28   16.07           16.28   17.09
+     59       Sint-Niklaas         O                                                                                                                       17.31
+             Bestemmingming            Dender                           Dender           Aalst           Dender                   Dender   Aalst
+                                       monde                            monde            13.51           monde                    monde    16.55
+                                       12.53                            13.53                            14.53                    15.53
+    ! ,¯/0
+L89.fm Page 11 Wednesday, December 8, 2010 9:35 AM
+
+
+
+
+                                                                       Kortrijk - Denderleeuw
+                                       L        >      {        >       =       L       {        =       L       {        =       L       {        =      L       {
+                                       2315    8967    2267    8965    1667     2316    2268    1668     2317    2269    1669     2318    2270    1670    2319    2271
+      L.                                        í               í
+             Herkomst
+
+
+     69       Poperinge                15.31                                    16.31                    17.31                    18.31                   19.33
+           A Kortrijk                  16.15                   16.29   17.05    17.15           18.05    18.15           19.05    19.15           20.05   20.15
+           Y Vichte                      ñ                     16.37   17.13      ñ             18.13      ñ             19.13      ñ             20.13     ñ
+           Y Anzegem                     ñ                     16.43   17.19      ñ             18.19      ñ             19.19      ñ             20.19     ñ
+           Y Oudenaarde            O   16.32                   16.50   17.25    17.32           18.25    18.32           19.25    19.32           20.25   20.32
+           Y Oudenaarde                16.33                   16.51   17.26    17.33           18.26    18.33           19.26    19.33           20.26   20.33
+           Y Sint-Denijs-Boekel          ñ                     16.57   17.32      ñ             18.32      ñ             19.32      ñ             20.32     ñ
+           Y Munkzwalm                   ñ                     17.00   17.35      ñ             18.35      ñ             19.35      ñ             20.35     ñ
+           Y Zottegem              O   16.44                   17.06   17.41    17.44           18.41    18.44           19.41    19.44           20.41   20.44
+           Y Zottegem                  16.46   16.49   17.05                    17.46   18.05            18.46   19.05            19.46   20.05           20.46   21.12
+           Y Hillegem                    ñ     16.54   17.09                      ñ     18.09              ñ     19.09              ñ     20.09             ñ     21.16
+           Y Herzele                     ñ     16.57   17.12                      ñ     18.12              ñ     19.12              ñ     20.12             ñ     21.19
+           Y Terhagen                    ñ     17.00   17.14                      ñ     18.14              ñ     19.14              ñ     20.14             ñ     21.21
+           Y Burst                 O     ñ     17.03   17.17                      ñ     18.17              ñ     19.17              ñ     20.17             ñ     21.24
+           Y Burst                       ñ     17.04   17.18                      ñ     18.18              ñ     19.18              ñ     20.18             ñ     21.25
+           Y Ede                         ñ     17.09   17.22                      ñ     18.22              ñ     19.22              ñ     20.22             ñ     21.29
+           Y Haaltert                    ñ     17.12   17.25                      ñ     18.25              ñ     19.25              ñ     20.25             ñ     21.32
+           Y Welle                       ñ     17.15   17.28                      ñ     18.28              ñ     19.28              ñ     20.28             ñ     21.35
+           C Denderleeuw           O   16.59   17.19   17.31                    17.59   18.31            18.59   19.31            19.59   20.31           20.59   21.38
+     50       Brus.-Zuid           O   17.19           17.58                    18.19   18.58            19.19   19.58            20.19   20.58           21.19   21.58
+     50       Brus.-Centraal       O   17.24           18.05                    18.24   19.05            19.24   20.05            20.24   21.05           21.24   22.05
+     50       Brus.-Noord          O   17.28           18.09                    18.28   19.09            19.28   20.09            20.28   21.09           21.28   22.09
+     59       Sint-Niklaas         O   18.31                                                                                                              22.31
+             Bestemmingming                                                    Dender                   Dender                   Dender
+                                                                               monde                    monde                    monde
+                                                                               18.53                    19.53                    20.53
+L89.fm Page 12 Wednesday, December 8, 2010 9:35 AM
+
+
+
+
+                                                                Kortrijk - Denderleeuw
+                                        =      L        L
+                                       1671    2320     2321
+      L.
+             Herkomst
+
+
+     69       Poperinge                                 21.31
+           A Kortrijk                  21.05   21.15    22.15
+           Y Vichte                    21.13     ñ        ñ
+           Y Anzegem                   21.19     ñ        ñ
+           Y Oudenaarde            O   21.25   21.32    22.32
+           Y Oudenaarde                21.26   21.33    22.33
+           Y Sint-Denijs-Boekel        21.32     ñ        ñ
+           Y Munkzwalm                 21.35     ñ      22.39
+           Y Zottegem              O   21.41   21.44    22.45
+           Y Zottegem                          21.46    22.46
+           Y Hillegem                            ñ        ñ
+           Y Herzele                             ñ      22.51
+           Y Terhagen                            ñ        ñ
+           Y Burst                 O             ñ      22.54
+           Y Burst                               ñ      22.54
+           Y Ede                                 ñ        ñ
+           Y Haaltert                            ñ      23.00
+           Y Welle                               ñ        ñ
+           C Denderleeuw           O           21.59    23.04
+     50       Brus.-Zuid           O           22.19    23.23
+     50       Brus.-Centraal       O           22.24    23.28
+     50       Brus.-Noord          O           22.28    23.32
+     59       Sint-Niklaas         O           23.31
+             Bestemmingming                            Dender
+                                                       monde
+                                                        0.05
+L89.fm Page 13 Wednesday, December 8, 2010 9:35 AM
+
+
+
+
+                                                                            Denderleeuw - Kortrijk
+                                            L         L       L       L       L       L       L       L       L       L       L       L       L       L       L       L       L
+                                            2328      2329    2330    2331    2332    2333    2334    2335    2336    2337    2338    2339    2340    2341    2342    2343    2344
+     Km    L.
+                 Herkomst                            Dender
+                                                     monde
+                                                      6.40
+          60    Lokeren                                        7.34    8.34    9.34   10.34   11.34   12.34   13.34   14.34   15.34   16.34   17.34   18.34   19.34   20.34   21.34
+          50    Brus.-Noord                            7.22    8.22    9.22   10.22   11.22   12.22   13.22   14.22   15.22   16.22   17.22   18.22   19.22   20.22   21.22   22.22
+          50    Brus.-Centraal                         7.26    8.26    9.26   10.26   11.26   12.26   13.26   14.26   15.26   16.26   17.26   18.26   19.26   20.26   21.26   22.26
+          50    Brus.-Zuid                   6.36      7.36    8.36    9.36   10.36   11.36   12.36   13.36   14.36   15.36   16.36   17.36   18.36   19.36   20.36   21.36   22.36
+      0      A Denderleeuw                   6.55      7.55    8.55    9.55   10.55   11.55   12.55   13.55   14.55   15.55   16.55   17.55   18.55   19.55   20.55   21.55   22.55
+      3      Y Welle                          ñ         ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ
+      5      Y Haaltert                     7.00       8.00    9.00   10.00   11.00   12.00   13.00   14.00   15.00   16.00   17.00   18.00   19.00   20.00   21.00   22.00   23.00
+      7      Y Ede                            ñ         ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ
+     12      Y Burst                    O    7.06      8.06    9.06   10.06   11.06   12.06   13.06   14.06   15.06   16.06   17.06   18.06   19.06   20.06   21.06   22.06   23.06
+     12      Y Burst                         7.06      8.06    9.06   10.06   11.06   12.06   13.06   14.06   15.06   16.06   17.06   18.06   19.06   20.06   21.06   22.06   23.06
+     14      Y Terhagen                       ñ         ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ
+     15      Y Herzele                      7.09       8.09    9.09   10.09   11.09   12.09   13.09   14.09   15.09   16.09   17.09   18.09   19.09   20.09   21.09   22.09   23.09
+     17      Y Hillegem                       ñ         ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ
+     21      Y Zottegem                 O    7.14      8.14    9.14   10.14   11.14   12.14   13.14   14.14   15.14   16.14   17.14   18.14   19.14   20.14   21.14   22.14   23.14
+     21      Y Zottegem                      7.15      8.15    9.15   10.15   11.15   12.15   13.15   14.15   15.15   16.15   17.15   18.15   19.15   20.15   21.15   22.15   23.15
+     28      Y Munkzwalm                     7.21      8.21    9.21   10.21   11.21   12.21   13.21   14.21   15.21   16.21   17.21   18.21   19.21   20.21   21.21   22.21   23.21
+     31      Y Sint-Denijs-Boekel             ñ         ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ
+     38      Y Oudenaarde               O    7.28      8.28    9.28   10.28   11.28   12.28   13.28   14.28   15.28   16.28   17.28   18.28   19.28   20.28   21.28   22.28   23.28
+     38      Y Oudenaarde                    7.29      8.29    9.29   10.29   11.29   12.29   13.29   14.29   15.29   16.29   17.29   18.29   19.29   20.29   21.29   22.29   23.29
+     46      Y Anzegem                        ñ         ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ
+     54      Y Vichte                         ñ         ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ
+     63      C Kortrijk                 O    7.45      8.45    9.45   10.45   11.45   12.45   13.45   14.45   15.45   16.45   17.45   18.45   19.45   20.45   21.45   22.45   23.45
+          69    Poperinge               O    8.29      9.29   10.29   11.29   12.29   13.29   14.29   15.29   16.29   17.29   18.29   19.29   20.29   21.29   22.29   23.29
+               Bestemmingming
+L89.fm Page 14 Wednesday, December 8, 2010 9:35 AM
+
+
+
+
+                                                                         Kortrijk - Denderleeuw
+                                              L      L      L      L        L       L       L       L       L       L       L       L       L       L       L       L        L
+                                              2304   2305   2306   2307     2308    2309    2310    2311    2312    2313    2314    2315    2316    2317    2318    2319     2320
+     Km    L.
+                     Herkomst
+
+
+          69          Poperinge                      5.31   6.31    7.31     8.31    9.31   10.31   11.31   12.31   13.31   14.31   15.31   16.31   17.31   18.31   19.31    20.31
+      0         A    Kortrijk                 5.15   6.15   7.15    8.15     9.15   10.15   11.15   12.15   13.15   14.15   15.15   16.15   17.15   18.15   19.15   20.15    21.15
+      9         Y    Vichte                    ñ      ñ      ñ       ñ        ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ        ñ
+     17         Y    Anzegem                   ñ      ñ      ñ       ñ        ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ        ñ
+     25         Y    Oudenaarde           O   5.31   6.31   7.31    8.31     9.31   10.31   11.31   12.31   13.31   14.31   15.31   16.31   17.31   18.31   19.31   20.31    21.31
+     25         Y    Oudenaarde               5.32   6.32   7.32    8.32     9.32   10.32   11.32   12.32   13.32   14.32   15.32   16.32   17.32   18.32   19.32   20.32    21.32
+     32         Y    Sint-Denijs-Boekel        ñ      ñ      ñ       ñ        ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ        ñ
+     35         Y    Munkzwalm                5.39   6.40   7.39    8.39     9.39   10.39   11.39   12.39   13.39   14.39   15.39   16.39   17.39   18.39   19.39   20.39    21.39
+     42         Y    Zottegem             O   5.45   6.45   7.45    8.45     9.45   10.45   11.45   12.45   13.45   14.45   15.45   16.45   17.45   18.45   19.45   20.45    21.45
+     42         Y    Zottegem                 5.46   6.46   7.46    8.46     9.46   10.46   11.46   12.46   13.46   14.46   15.46   16.46   17.46   18.46   19.46   20.46    21.46
+     46         Y    Hillegem                  ñ      ñ      ñ       ñ        ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ        ñ
+     48         Y    Herzele                  5.51   6.51   7.51    8.51     9.51   10.51   11.51   12.51   13.51   14.51   15.51   16.51   17.51   18.51   19.51   20.51    21.51
+     49         Y    Terhagen                  ñ      ñ      ñ       ñ        ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ        ñ
+     51         Y    Burst                O   5.54   6.54   7.54    8.54     9.54   10.54   11.54   12.54   13.54   14.54   15.54   16.54   17.54   18.54   19.54   20.54    21.54
+     51         Y    Burst                    5.54   6.54   7.54    8.54     9.54   10.54   11.54   12.54   13.54   14.54   15.54   16.54   17.54   18.54   19.54   20.54    21.54
+     56         Y    Ede                       ñ      ñ      ñ       ñ        ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ        ñ
+     58         Y    Haaltert                 6.00   7.00   8.00    9.00    10.00   11.00   12.00   13.00   14.00   15.00   16.00   17.00   18.00   19.00   20.00   21.00    22.00
+     60         Y£   Welle                     ñ      ñ      ñ       ñ        ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ       ñ        ñ
+     63         C    Denderleeuw          O   6.04   7.04   8.04    9.04    10.04   11.04   12.04   13.04   14.04   15.04   16.04   17.04   18.04   19.04   20.04   21.04    22.04
+          50          Brus.-Zuid          O   6.24   7.24   8.24    9.24    10.24   11.24   12.24   13.24   14.24   15.24   16.24   17.24   18.24   19.24   20.24   21.24    22.24
+          50          Brus.-Centraal      O          7.34   8.34    9.34    10.34   11.34   12.34   13.34   14.34   15.34   16.34   17.34   18.31   19.34   20.31   21.34    22.34
+          50          Brus.-Noord         O          7.38   8.38    9.38    10.38   11.38   12.38   13.38   14.38   15.38   16.38   17.38   18.35   19.38   20.35   21.38    22.38
+          60          Lokeren             O          8.26   9.26   10.26    11.26   12.26   13.26   14.26   15.26   16.26   17.26   18.26   19.26   20.26   21.26   22.26
+                     Bestemmingming                                                                                                                                         Dender
+                                                                                                                                                                            monde
+                                                                                                                                                                            23.06
+L89.fm Page 15 Wednesday, December 8, 2010 9:35 AM
+
+
+
+
+15
+
