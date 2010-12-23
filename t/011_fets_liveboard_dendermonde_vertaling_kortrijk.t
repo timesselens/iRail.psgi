@@ -101,7 +101,7 @@ test_psgi app => $ENV{PROXY} == 1 ? $proxy_app : $app, client => sub {
         # get a list of arrivals, bail out if none arrive or seek $vehicle_id exists in the list
         my @trains2 = values %{$xml2->{arrivals}->{arrival}};
         diag('currently no arrivals in Dendermonde, bailing out') and done_testing() unless @trains2 > 0;
-        cmp_deeply(@trains2, superhashof({arrivals => arrival => superbagof(superhashof(vehicle => $vehicle_id)) }), "should contain same vehicle id" );
+        cmp_deeply(\@trains2, superbagof(superhashof({vehicle => $vehicle_id})), "liveboard SHOULD contain $vehicle_id");
             
         # assert the station name for the specified vehicle id is correct
         my ($station) = map { $_->{station}->{content} } grep { $_->{vehicle} =~ m/$vehicle_id/i } @trains2;
